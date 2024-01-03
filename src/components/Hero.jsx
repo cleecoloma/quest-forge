@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './QuestForge.css';
+import '../styles/Hero.css';
 
-function QuestForge() {
+function Hero() {
   const [data, setData] = useState(null);
   const [userChoice, setUserChoice] = useState(null);
 
@@ -105,4 +105,4 @@ function QuestForge() {
   );
 }
 
-export default QuestForge;
+export default Hero;
