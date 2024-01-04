@@ -7,16 +7,15 @@
   margin: 0 auto;
   width: 1300px;
   font-size: 110%;
-  background-color: white;
 }
 
 #linkedin-icon {
-  color: #0077b5;
+  color: #ffffff;
   font-size: 350%;
 }
 
 #github-icon {
-  color: #171515;
+  color: #ffffff;
   font-size: 300%;
 }
 
@@ -29,11 +28,11 @@
 }
 
 #footer-container {
-  color: #717270;
+  color: #999a98;
 }
 
 #footer-container span {
-  color: #3e6a76;
+  color: #d32f2f;
 }
 
 @media only screen and (min-width: 1221px) and (max-width: 1440px) {

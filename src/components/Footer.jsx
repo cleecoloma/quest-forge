@@ -33,7 +33,7 @@ function Footer() {
             <span>Chester Lee</span> <span>Coloma</span>
           </strong>
           <br />
-          2023
+          2024
         </p>
       </div>
     </div>
