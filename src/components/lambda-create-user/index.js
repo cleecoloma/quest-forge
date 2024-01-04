@@ -12,7 +12,7 @@ const userSchema = new dynamoose.Schema({
   },
 });
 
-const User = dynamoose.model('midterm-users', userSchema);
+const User = dynamoose.model('quest-characters', userSchema);
 
 exports.handler = async (event) => {
   const requestBody = JSON.parse(event.body);
