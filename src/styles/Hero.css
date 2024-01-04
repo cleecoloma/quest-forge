@@ -10,15 +10,104 @@
 #hero-motto h1 {
   font-family: 'Ultra', serif;
   font-size: 250%;
-  color: #ccced0;
+  color: #b92d15;
 }
 
 #hero-motto h2 {
   font-family: 'Red Hat Display', sans-serif;
-  color: #404f63;
+  color: #ccced0;
 }
 
 #hero-image {
   padding: 2rem;
   width: 750px;
+}
+
+@media only screen and (min-width: 1221px) and (max-width: 1440px) {
+  #hero-container {
+    max-width: 1200px;
+  }
+}
+
+@media only screen and (min-width: 1001px) and (max-width: 1220px) {
+  #hero-container {
+    max-width: 950px;
+  }
+}
+
+@media only screen and (min-width: 801px) and (max-width: 1000px) {
+  #hero-container {
+    max-width: 750px;
+  }
+}
+
+@media only screen and (min-width: 551px) and (max-width: 800px) {
+  #hero-container {
+    max-width: 540px;
+  }
+
+  #hero-image {
+    padding: 3rem 1rem 1rem;
+    width: 550px;
+  }
+
+  #hero-motto h1 {
+    font-size: 200%;
+  }
+
+  #hero-motto h2 {
+    font-size: 130%;
+  }
+
+  #button-container {
+    padding: 2rem 0;
+  }
+
+  #create-button {
+    width: 90%;
+    height: 3rem;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  #hero-container {
+    max-width: 400px;
+    padding: 0 8px;
+  }
+
+  #hero-image {
+    width: 400px;
+  }
+
+  #hero-motto h2 {
+    font-size: 120%;
+  }
+
+  #button-container {
+    padding: 1rem 0;
+  }
+
+  #create-button {
+    width: 90%;
+    height: 3rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #hero-container {
+    max-width: 350px;
+    padding: 0 4px;
+  }
+
+  #hero-image {
+    width: 100%;
+  }
+
+  #hero-motto h1 {
+    font-size: 170%;
+  }
+
+  #hero-motto h2 {
+    font-size: 110%;
+  }
 }

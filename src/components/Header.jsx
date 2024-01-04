@@ -11,7 +11,7 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import '../styles/Header.css';
 
-const pages = ['Home', 'Create Hero', 'Quest'];
+const pages = ['Home', 'Create', 'Quest'];
 
 function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -25,7 +25,7 @@ function Header() {
   };
 
   return (
-    <AppBar position='fixed'>
+    <AppBar position='fixed' color='error'>
       <Container maxWidth='xl'>
         <Toolbar disableGutters>
           <img

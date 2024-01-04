@@ -1,16 +1,15 @@
-/* Header.css */
 .brand-logo {
   width: 5rem;
-  margin-right: 8px; /* equivalent to mr: 1 */
+  margin-right: 8px;
 }
 
-@media screen and (max-width: 901px) { /* assuming 600px is your breakpoint for 'xs' */
+@media screen and (max-width: 901px) {
   .brand-logo-for-xs {
     display: none;
   }
 }
 
-@media screen and (min-width: 901px) { /* assuming 600px is your breakpoint for 'md' */
+@media screen and (min-width: 901px) {
   .brand-logo-for-md {
     display: none;
   }
