@@ -1,4 +1,5 @@
-import * as React from 'react';
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -11,7 +12,11 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import '../styles/Header.css';
 
-const pages = ['Home', 'Create', 'Quest'];
+const pages = [
+  { title: 'Home', url: '/' },
+  { title: 'Create', url: '/create' },
+  { title: 'Quest', url: '/quest' },
+];
 
 function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -37,7 +42,7 @@ function Header() {
             variant='h6'
             noWrap
             component='a'
-            href='#app-bar-with-responsive-menu'
+            href='/'
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -81,8 +86,15 @@ function Header() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign='center'>{page}</Typography>
+                <MenuItem key={page.title} onClick={handleCloseNavMenu}>
+                  <Typography textAlign='center'>
+                    <NavLink
+                      to={page.url}
+                      style={{ textDecoration: 'none', color: 'inherit' }}
+                    >
+                      {page.title}
+                    </NavLink>
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -112,11 +124,16 @@ function Header() {
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
-                key={page}
+                key={page.title}
                 onClick={handleCloseNavMenu}
+                style={({ isActive }) =>
+                  isActive ? { color: 'orange', textDecoration: 'underline' } : { color: 'white' }
+                }
                 sx={{ my: 2, color: 'white', display: 'block' }}
+                component={NavLink}
+                to={page.url}
               >
-                {page}
+                {page.title}
               </Button>
             ))}
           </Box>
@@ -125,4 +142,5 @@ function Header() {
     </AppBar>
   );
 }
+
 export default Header;
