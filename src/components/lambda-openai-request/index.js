@@ -9,15 +9,11 @@ const userSchema = new dynamoose.Schema({
   id: Number,
   name: String,
   age: Number,
-  race: {
-    type: String,
-  },
-  class: {
-    type: String,
-  },
+  race: String,
+  class: String,
 });
 
-const User = dynamoose.model('midterm-users', userSchema);
+const User = dynamoose.model('quest-cha', userSchema);
 
 exports.handler = async (event) => {
   console.log('HERES THE EVENT FROM LAMBDA 1A: ', event);
@@ -64,10 +60,6 @@ exports.handler = async (event) => {
       const resultBody = JSON.parse(result.body);
       console.log('Parse payload to object: ', result);
       console.log('Parse result body: ', resultBody);
-      // return {
-      //   statusCode: 200,
-      //   body: JSON.stringify(resultBody),
-      // };
       return resultBody;
     } else {
       return {

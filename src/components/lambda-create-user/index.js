@@ -4,17 +4,15 @@ const userSchema = new dynamoose.Schema({
   id: Number,
   name: String,
   age: Number,
-  race: {
-    type: String,
-  },
-  class: {
-    type: String,
-  },
+  race: String,
+  class: String,
 });
 
 const User = dynamoose.model('quest-characters', userSchema);
 
 exports.handler = async (event) => {
+  console.log('WHATS IN THE EVENT', event);
+  console.log('WHATS IN THE BODY', event.body);
   const requestBody = JSON.parse(event.body);
   const id = requestBody.id;
   const name = requestBody.name;
