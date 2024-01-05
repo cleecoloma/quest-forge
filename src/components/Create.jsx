@@ -23,9 +23,10 @@ function Create() {
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
+    const updatedValue = name === 'age' ? Number(value) : value;
     setFormData({
       ...formData,
-      [name]: value,
+      [name]: updatedValue,
     });
   };
 
@@ -61,7 +62,7 @@ function Create() {
         type='number'
         value={formData.age}
         onChange={handleInputChange}
-        inputProps={{ min: '5', max: '1000', step: '5' }}
+        inputProps={{ min: 5, max: 1000, step: 5 }}
       />
 
       <FormControl fullWidth margin='normal'>
