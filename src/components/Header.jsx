@@ -22,7 +22,13 @@ function Header() {
 
   const { hero } = useContext(UserContext);
 
-  const filteredPages = pages.filter((page) => hero || page.title !== 'Quest');
+  const filteredPages = pages.filter((page) => {
+    if (hero) {
+      return page.title !== 'Create';
+    } else {
+      return page.title !== 'Quest';
+    }
+  });
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
@@ -33,6 +39,8 @@ function Header() {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
+
+  console.log("Is there a hero", hero)
 
   return (
     <AppBar position='fixed' color='error'>
@@ -127,7 +135,7 @@ function Header() {
             Quest Forge
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
+            {filteredPages.map((page) => (
               <Button
                 key={page.title}
                 onClick={handleCloseNavMenu}
