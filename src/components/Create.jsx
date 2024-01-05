@@ -1,6 +1,6 @@
 'use strict';
 
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import {
   TextField,
   Button,
@@ -9,14 +9,17 @@ import {
   InputLabel,
   Select,
 } from '@mui/material';
-import '../styles/Create.css'
+import { UserContext } from '../context/User';
+import '../styles/Create.css';
 
 function Create() {
   const [formData, setFormData] = useState({
     name: '',
     age: '',
     race: '',
+    class: '',
   });
+  const { handleHero } = useContext(UserContext);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -28,6 +31,7 @@ function Create() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    handleHero(formData)
     console.log(formData);
   };
 
@@ -37,6 +41,7 @@ function Create() {
       onSubmit={handleSubmit}
       style={{ maxWidth: 400, margin: 'auto' }}
     >
+      <h2 className='form-title'>Create your hero!</h2>
       <TextField
         label='Name'
         variant='outlined'
@@ -93,11 +98,17 @@ function Create() {
         </Select>
       </FormControl>
 
-      <Button type='submit' variant='contained' color='primary' fullWidth>
+      <Button
+        id='create-submit'
+        type='submit'
+        variant='contained'
+        color='warning'
+        fullWidth
+      >
         Submit
       </Button>
     </form>
   );
 }
 
-export default Create
+export default Create;

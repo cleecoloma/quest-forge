@@ -1,3 +1,5 @@
+'use strict';
+
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '@mui/material/Button';
@@ -17,7 +19,7 @@ function Hero() {
         <div id='button-container'>
           <Button
             variant='contained'
-            color='error'
+            color='warning'
             id='create-button'
             onClick={handleCreateClick}
           >

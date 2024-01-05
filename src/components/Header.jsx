@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -10,15 +10,20 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
+import { UserContext } from '../context/User';
 import '../styles/Header.css';
 
-const pages = [
-  { title: 'Home', url: '/' },
-  { title: 'Create', url: '/create' },
-  { title: 'Quest', url: '/quest' },
-];
-
 function Header() {
+  const pages = [
+    { title: 'Home', url: '/' },
+    { title: 'Create', url: '/create' },
+    { title: 'Quest', url: '/quest' },
+  ];
+
+  const { hero } = useContext(UserContext);
+
+  const filteredPages = pages.filter((page) => hero || page.title !== 'Quest');
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -85,7 +90,7 @@ function Header() {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
+              {filteredPages.map((page) => (
                 <MenuItem key={page.title} onClick={handleCloseNavMenu}>
                   <Typography textAlign='center'>
                     <NavLink
@@ -127,7 +132,9 @@ function Header() {
                 key={page.title}
                 onClick={handleCloseNavMenu}
                 style={({ isActive }) =>
-                  isActive ? { color: 'orange', textDecoration: 'underline' } : { color: 'white' }
+                  isActive
+                    ? { color: 'orange', textDecoration: 'underline' }
+                    : { color: 'white' }
                 }
                 sx={{ my: 2, color: 'white', display: 'block' }}
                 component={NavLink}
