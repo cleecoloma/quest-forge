@@ -1,10 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
+import { Button } from '@mui/material';
+import { UserContext } from '../context/User';
+import { useNavigate } from 'react-router-dom';
 import '../styles/Hero.css';
 
 function Hero() {
   const [data, setData] = useState(null);
   const [userChoice, setUserChoice] = useState(null);
+  const navigate = useNavigate();
+  const { handleHero } = useContext(UserContext);
 
   const SERVER_URL = import.meta.env.VITE_SERVER_URL;
 
@@ -40,6 +45,12 @@ function Hero() {
       const updatedData = response.data;
       populateFormWithData(updatedData);
     }
+  };
+
+  const handleReset = () => {
+    handleHero(null);
+    console.log("Hero has been reset")
+    navigate('/create');
   };
 
   const renderOptions = () => {
@@ -101,6 +112,9 @@ function Hero() {
           <button type='submit'>Submit Choice</button>
         </form>
       ) : null}
+      <Button type='submit' variant='contained' color='error' onClick={handleReset} fullWidth>
+        Reset
+      </Button>
     </div>
   );
 }
