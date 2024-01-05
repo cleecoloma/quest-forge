@@ -5,13 +5,13 @@ import { UserContext } from '../context/User';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Hero.css';
 
+const SERVER_URL = import.meta.env.VITE_SERVER_URL;
+
 function Hero() {
   const [data, setData] = useState(null);
   const [userChoice, setUserChoice] = useState(null);
   const navigate = useNavigate();
   const { handleHero } = useContext(UserContext);
-
-  const SERVER_URL = import.meta.env.VITE_SERVER_URL;
 
   useEffect(() => {
     fetchDataAndDisplay();
@@ -24,7 +24,7 @@ function Hero() {
   const fetchDataAndDisplay = async () => {
     try {
       // Make a POST request using Axios
-      const response = await axios.post(`${SERVER_URL}/adventure`);
+      const response = await axios.post(`${SERVER_URL}/quest`);
       const responseData = response.data;
       console.log("HERE'S THE RESPONSE ", response);
 
@@ -38,7 +38,7 @@ function Hero() {
   const handleUserChoice = async (event) => {
     event.preventDefault();
     if (userChoice !== null && data !== null) {
-      const response = await axios.post(`${SERVER_URL}/adventure`, {
+      const response = await axios.post(`${SERVER_URL}/quest`, {
         ...data,
         userChoice,
       });
@@ -49,7 +49,7 @@ function Hero() {
 
   const handleReset = () => {
     handleHero(null);
-    console.log("Hero has been reset")
+    console.log('Hero has been reset');
     navigate('/create');
   };
 
@@ -112,7 +112,13 @@ function Hero() {
           <button type='submit'>Submit Choice</button>
         </form>
       ) : null}
-      <Button type='submit' variant='contained' color='error' onClick={handleReset} fullWidth>
+      <Button
+        type='submit'
+        variant='contained'
+        color='error'
+        onClick={handleReset}
+        fullWidth
+      >
         Reset
       </Button>
     </div>

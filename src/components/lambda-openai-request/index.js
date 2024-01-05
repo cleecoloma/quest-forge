@@ -13,7 +13,7 @@ const userSchema = new dynamoose.Schema({
   class: String,
 });
 
-const User = dynamoose.model('quest-cha', userSchema);
+const User = dynamoose.model('quest-characters', userSchema);
 
 exports.handler = async (event) => {
   console.log('HERES THE EVENT FROM LAMBDA 1A: ', event);
