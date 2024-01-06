@@ -7,6 +7,7 @@ import {
   CardContent,
   Typography,
 } from '@mui/material';
+import '../styles/SelectionCard.css';
 
 function SelectionCard({ label, image, value, selected, onClick }) {
   return (

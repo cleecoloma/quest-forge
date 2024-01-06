@@ -1,14 +1,7 @@
 'use strict';
 
 import React, { useState, useContext } from 'react';
-import {
-  TextField,
-  Button,
-  MenuItem,
-  FormControl,
-  InputLabel,
-  Select,
-} from '@mui/material';
+import { TextField, Button, Typography } from '@mui/material';
 import { UserContext } from '../context/User';
 import SelectionCard from './SelectionCard';
 import '../styles/Create.css';
@@ -47,9 +40,16 @@ function Create() {
     });
   };
 
+  const handleSelectionChange = (name, value) => {
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    handleHero(formData)
+    handleHero(formData);
     console.log(formData);
   };
 
@@ -60,6 +60,7 @@ function Create() {
       style={{ maxWidth: 400, margin: 'auto' }}
     >
       <h2 className='form-title'>Create your hero!</h2>
+
       <TextField
         label='Name'
         variant='outlined'
@@ -82,39 +83,37 @@ function Create() {
         inputProps={{ min: 5, max: 1000, step: 5 }}
       />
 
-      <FormControl fullWidth margin='normal'>
-        <InputLabel id='race-label'>Race</InputLabel>
-        <Select
-          labelId='race-label'
-          label='Race'
-          name='race'
-          value={formData.race}
-          onChange={handleInputChange}
-        >
-          <MenuItem value='human'>Human</MenuItem>
-          <MenuItem value='elf'>Elf</MenuItem>
-          <MenuItem value='dwarf'>Dwarf</MenuItem>
-          <MenuItem value='halfling'>Halfling</MenuItem>
-          <MenuItem value='dragonborn'>Dragonborn</MenuItem>
-        </Select>
-      </FormControl>
+      <div className='card-selection-container'>
+        <Typography gutterBottom variant='h6' component='div'>
+          Race
+        </Typography>
+        {raceOptions.map((option) => (
+          <SelectionCard
+            key={option.value}
+            label={option.label}
+            image={option.image}
+            value={option.value}
+            selected={formData.race === option.value}
+            onClick={() => handleSelectionChange('race', option.value)}
+          />
+        ))}
+      </div>
 
-      <FormControl fullWidth margin='normal'>
-        <InputLabel id='class-label'>Class</InputLabel>
-        <Select
-          labelId='class-label'
-          label='Class'
-          name='class'
-          value={formData.class}
-          onChange={handleInputChange}
-        >
-          <MenuItem value='fighter'>Fighter</MenuItem>
-          <MenuItem value='wizard'>Wizard</MenuItem>
-          <MenuItem value='cleric'>Cleric</MenuItem>
-          <MenuItem value='rogue'>Rogue</MenuItem>
-          <MenuItem value='paladin'>Paladin</MenuItem>
-        </Select>
-      </FormControl>
+      <div className='card-selection-container'>
+        <Typography gutterBottom variant='h6' component='div'>
+          Class
+        </Typography>
+        {classOptions.map((option) => (
+          <SelectionCard
+            key={option.value}
+            label={option.label}
+            image={option.image}
+            value={option.value}
+            selected={formData.class === option.value}
+            onClick={() => handleSelectionChange('class', option.value)}
+          />
+        ))}
+      </div>
 
       <Button
         id='create-submit'
@@ -122,6 +121,7 @@ function Create() {
         variant='contained'
         color='warning'
         fullWidth
+        style={{ marginTop: 20 }}
       >
         Submit
       </Button>
