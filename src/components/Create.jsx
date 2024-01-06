@@ -70,6 +70,7 @@ function Create() {
             name='name'
             value={formData.name}
             onChange={handleInputChange}
+            inputProps={{ maxLength: 15 }}
             required
           />
 
@@ -154,8 +155,9 @@ function Create() {
           value={formData.value}
           selected={formData.class}
         />
+        {formData.name ? <h3>{formData.name}</h3> : null}
         <img
-          className='class-image-logo'
+          className='image-logo'
           src={'/images/' + formData.class + '.png'}
           alt='hero class'
         />

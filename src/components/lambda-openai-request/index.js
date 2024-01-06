@@ -9,6 +9,7 @@ const userSchema = new dynamoose.Schema({
   id: Number,
   name: String,
   age: Number,
+  sex: String,
   race: String,
   class: String,
 });
