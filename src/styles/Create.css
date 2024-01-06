@@ -1,20 +1,36 @@
 #create-container {
-  margin: 6rem auto;
-  width: 1300px;
+  margin: 6rem auto 0;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 1300px;
+  margin-top: 80px;
+  min-height: calc(100vh - 80px);
 }
 
 #create-form {
-  padding: 4rem;
-  border-radius: 1rem;
-  background-color: #9bc2c6;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  background-color: #a8a8a8;
+}
+
+#create-left {
+  width: 50%;
+  padding: 2rem 3rem;
+}
+
+#create-right {
+  width: 50%;
+  position: relative;
 }
 
 .form-title {
-  font-family: 'Ultra', serif;
+  font-family: 'Roboto Mono', monospace;
   text-align: center;
   color: #333;
   margin-bottom: 20px;
+  font-size: 220%;
 }
 
 #create-submit {
@@ -24,15 +40,6 @@
 .card-selection-title {
   color: #333;
   width: 5rem;
-}
-
-#create-left {
-  width: 50%;
-}
-
-#create-right {
-  width: 50%;
-  position: relative;
 }
 
 .image-logo {
