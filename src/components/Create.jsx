@@ -33,11 +33,11 @@ function Create() {
   ];
 
   const classOptions = [
-    { label: 'Fighter', value: 'fighter', image: '/images/fighter' },
-    { label: 'Wizard', value: 'wizard', image: '/images/wizard' },
-    { label: 'Cleric', value: 'cleric', image: '/images/cleric' },
-    { label: 'Rogue', value: 'rogue', image: '/images/rogue' },
-    { label: 'Paladin', value: 'paladin', image: '/images/paladin' },
+    { label: 'Fighter', value: 'fighter', image: '/images/fighter.png' },
+    { label: 'Wizard', value: 'wizard', image: '/images/wizard.png' },
+    { label: 'Cleric', value: 'cleric', image: '/images/cleric.png' },
+    { label: 'Rogue', value: 'rogue', image: '/images/rogue.png' },
+    { label: 'Paladin', value: 'paladin', image: '/images/paladin.png' },
   ];
 
   const handleInputChange = (event) => {
@@ -66,7 +66,7 @@ function Create() {
     <form
       id='create-form'
       onSubmit={handleSubmit}
-      style={{ maxWidth: 400, margin: 'auto' }}
+      style={{ maxWidth: 900, margin: 'auto' }}
     >
       <h2 className='form-title'>Create your hero!</h2>
 
