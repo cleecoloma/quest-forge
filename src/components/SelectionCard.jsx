@@ -13,10 +13,10 @@ function SelectionCard({ label, image, value, selected, onClick }) {
   return (
     <Card
       onClick={() => onClick(value)}
-      style={{ border: selected ? '2px solid blue' : '' }}
+      style={{ border: selected ? '2px solid red' : '' }}
     >
       <CardActionArea>
-        <CardMedia component='img' height='140' image={image} alt={label} />
+        <CardMedia component='img' height='150' image={image} alt={label} />
         <CardContent>
           <Typography gutterBottom variant='h5' component='div'>
             {label}

@@ -66,7 +66,7 @@ function Create() {
     <form
       id='create-form'
       onSubmit={handleSubmit}
-      style={{ maxWidth: 900, margin: 'auto' }}
+      style={{ maxWidth: 1000, margin: 'auto' }}
     >
       <h2 className='form-title'>Create your hero!</h2>
 
@@ -109,7 +109,12 @@ function Create() {
       </FormControl>
 
       <div className='card-selection-container'>
-        <Typography gutterBottom variant='h6' component='div'>
+        <Typography
+          gutterBottom
+          variant='h6'
+          component='div'
+          className='card-selection-title'
+        >
           Race
         </Typography>
         {raceOptions.map((option) => (
@@ -125,7 +130,12 @@ function Create() {
       </div>
 
       <div className='card-selection-container'>
-        <Typography gutterBottom variant='h6' component='div'>
+        <Typography
+          gutterBottom
+          variant='h6'
+          component='div'
+          className='card-selection-title'
+        >
           Class
         </Typography>
         {classOptions.map((option) => (
