@@ -41,7 +41,7 @@ exports.handler = async (event) => {
       console.log('body before stringify:', body);
 
       const params = {
-        FunctionName: 'openaiRequest',
+        FunctionName: 'quest-openai',
         InvocationType: 'RequestResponse',
         Payload: JSON.stringify({ user, body }),
       };

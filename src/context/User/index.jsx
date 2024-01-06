@@ -20,11 +20,11 @@ function UserProvider(props) {
     try {
       const response = await axios.put(`${SERVER_URL}/create`, heroObj);
       const responseData = response.data;
-      console.log("HERE'S THE RESPONSE ", response);
+      console.log("HERE'S THE RESPONSE ", responseData);
     } catch (error) {
       console.error('Error:', error);
     }
-    // navigate('/quest');
+    navigate('/quest');
   };
 
   return (
