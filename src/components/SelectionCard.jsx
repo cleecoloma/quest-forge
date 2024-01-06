@@ -9,16 +9,12 @@ import {
 } from '@mui/material';
 import '../styles/SelectionCard.css';
 
-function SelectionCard({ label, image, value, selected, onClick }) {
+function SelectionCard({ label, image}) {
   return (
-    <Card
-      onClick={() => onClick(value)}
-      style={{ border: selected ? '2px solid red' : '' }}
-    >
+    <Card id='card-area'>
       <CardActionArea>
         <CardMedia
           component='img'
-          height='160'
           image={image}
           alt={label}
           className='selection-card-image'

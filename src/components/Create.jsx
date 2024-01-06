@@ -49,12 +49,6 @@ function Create() {
     });
   };
 
-  const handleSelectionChange = (name, value) => {
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -63,103 +57,110 @@ function Create() {
   };
 
   return (
-    <form
-      id='create-form'
-      onSubmit={handleSubmit}
-    >
-      <h2 className='form-title'>Create your hero!</h2>
+    <div id='create-container'>
+      <div id='create-left'>
+        <form id='create-form' onSubmit={handleSubmit}>
+          <h2 className='form-title'>Create your hero!</h2>
 
-      <TextField
-        label='Name'
-        variant='outlined'
-        fullWidth
-        margin='normal'
-        name='name'
-        value={formData.name}
-        onChange={handleInputChange}
-        required
-      />
-
-      <TextField
-        label='Age'
-        variant='outlined'
-        fullWidth
-        margin='normal'
-        name='age'
-        type='number'
-        value={formData.age}
-        onChange={handleInputChange}
-        inputProps={{ min: 8, max: 1000, step: 1 }}
-        required
-      />
-
-      <FormControl fullWidth margin='normal' required>
-        <InputLabel id='sex-label'>Sex</InputLabel>
-        <Select
-          labelId='sex-label'
-          label='Sex'
-          name='sex'
-          value={formData.sex}
-          onChange={handleInputChange}
-        >
-          <MenuItem value='male'>Male</MenuItem>
-          <MenuItem value='female'>Female</MenuItem>
-        </Select>
-      </FormControl>
-
-      <div className='card-selection-container'>
-        <Typography
-          gutterBottom
-          variant='h6'
-          component='div'
-          className='card-selection-title'
-        >
-          Race
-        </Typography>
-        {raceOptions.map((option) => (
-          <SelectionCard
-            key={option.value}
-            label={option.label}
-            image={option.image + '-' + formData.sex + '.png'}
-            value={option.value}
-            selected={formData.race === option.value}
-            onClick={() => handleSelectionChange('race', option.value)}
+          <TextField
+            label='Name'
+            variant='outlined'
+            fullWidth
+            margin='normal'
+            name='name'
+            value={formData.name}
+            onChange={handleInputChange}
+            required
           />
-        ))}
-      </div>
 
-      <div className='card-selection-container'>
-        <Typography
-          gutterBottom
-          variant='h6'
-          component='div'
-          className='card-selection-title'
-        >
-          Class
-        </Typography>
-        {classOptions.map((option) => (
-          <SelectionCard
-            key={option.value}
-            label={option.label}
-            image={option.image}
-            value={option.value}
-            selected={formData.class === option.value}
-            onClick={() => handleSelectionChange('class', option.value)}
+          <TextField
+            label='Age'
+            variant='outlined'
+            fullWidth
+            margin='normal'
+            name='age'
+            type='number'
+            value={formData.age}
+            onChange={handleInputChange}
+            inputProps={{ min: 8, max: 1000, step: 1 }}
+            required
           />
-        ))}
-      </div>
 
-      <Button
-        id='create-submit'
-        type='submit'
-        variant='contained'
-        color='warning'
-        fullWidth
-        style={{ marginTop: 20 }}
-      >
-        Submit
-      </Button>
-    </form>
+          <FormControl fullWidth margin='normal' required>
+            <InputLabel id='sex-label'>Sex</InputLabel>
+            <Select
+              labelId='sex-label'
+              label='Sex'
+              name='sex'
+              value={formData.sex}
+              onChange={handleInputChange}
+            >
+              <MenuItem value='male'>Male</MenuItem>
+              <MenuItem value='female'>Female</MenuItem>
+            </Select>
+          </FormControl>
+
+          <FormControl fullWidth margin='normal'>
+            <InputLabel id='race-label'>Race</InputLabel>
+            <Select
+              labelId='race-label'
+              label='Race'
+              name='race'
+              value={formData.race}
+              onChange={handleInputChange}
+            >
+              <MenuItem value='human'>Human</MenuItem>
+              <MenuItem value='elf'>Elf</MenuItem>
+              <MenuItem value='dwarf'>Dwarf</MenuItem>
+              <MenuItem value='halfling'>Halfling</MenuItem>
+              <MenuItem value='dragonborn'>Dragonborn</MenuItem>
+            </Select>
+          </FormControl>
+
+          <FormControl fullWidth margin='normal'>
+            <InputLabel id='class-label'>Class</InputLabel>
+            <Select
+              labelId='class-label'
+              label='Class'
+              name='class'
+              value={formData.class}
+              onChange={handleInputChange}
+            >
+              <MenuItem value='fighter'>Fighter</MenuItem>
+              <MenuItem value='wizard'>Wizard</MenuItem>
+              <MenuItem value='cleric'>Cleric</MenuItem>
+              <MenuItem value='rogue'>Rogue</MenuItem>
+              <MenuItem value='paladin'>Paladin</MenuItem>
+            </Select>
+          </FormControl>
+
+          <Button
+            id='create-submit'
+            type='submit'
+            variant='contained'
+            color='warning'
+            fullWidth
+            style={{ marginTop: 20 }}
+          >
+            Submit
+          </Button>
+        </form>
+      </div>
+      <div id='create-right'>
+        <SelectionCard
+          key={formData.value}
+          label={formData.label}
+          image={'/images/' + formData.race + '-' + formData.sex + '.png'}
+          value={formData.value}
+          selected={formData.class}
+        />
+        <img
+          className='class-image-logo'
+          src={'/images/' + formData.class + '.png'}
+          alt='hero class'
+        />
+      </div>
+    </div>
   );
 }
 

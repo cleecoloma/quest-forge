@@ -13,3 +13,8 @@
 .selection-card-image {
   margin-top: 1rem !important;
 }
+
+#card-area {
+  border-radius: 30% 10%;
+  margin: 2rem 3rem;
+}
