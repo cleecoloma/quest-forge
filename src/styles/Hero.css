@@ -1,5 +1,5 @@
 #hero-container {
-  margin: 6rem auto;
+  margin: 6rem auto 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,6 +36,7 @@
 #create-button {
   width: 20rem;
   height: 3rem;
+  font-size: 110%;
 }
 
 @media only screen and (min-width: 1221px) and (max-width: 1440px) {
