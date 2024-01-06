@@ -1,7 +1,15 @@
 'use strict';
 
 import React, { useState, useContext } from 'react';
-import { TextField, Button, Typography } from '@mui/material';
+import {
+  TextField,
+  Button,
+  Typography,
+  MenuItem,
+  FormControl,
+  InputLabel,
+  Select,
+} from '@mui/material';
 import { UserContext } from '../context/User';
 import SelectionCard from './SelectionCard';
 import '../styles/Create.css';
@@ -10,6 +18,7 @@ function Create() {
   const [formData, setFormData] = useState({
     name: '',
     age: '',
+    sex: '',
     race: '',
     class: '',
   });
@@ -83,6 +92,20 @@ function Create() {
         inputProps={{ min: 5, max: 1000, step: 5 }}
       />
 
+      <FormControl fullWidth margin='normal'>
+        <InputLabel id='sex-label'>Sex</InputLabel>
+        <Select
+          labelId='sex-label'
+          label='Sex'
+          name='sex'
+          value={formData.sex}
+          onChange={handleInputChange}
+        >
+          <MenuItem value='male'>Male</MenuItem>
+          <MenuItem value='female'>Female</MenuItem>
+        </Select>
+      </FormControl>
+
       <div className='card-selection-container'>
         <Typography gutterBottom variant='h6' component='div'>
           Race
@@ -91,7 +114,7 @@ function Create() {
           <SelectionCard
             key={option.value}
             label={option.label}
-            image={option.image}
+            image={option.image + '-'+ formData.sex +'.png'}
             value={option.value}
             selected={formData.race === option.value}
             onClick={() => handleSelectionChange('race', option.value)}
