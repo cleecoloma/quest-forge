@@ -17,10 +17,10 @@ import '../styles/Create.css';
 function Create() {
   const [formData, setFormData] = useState({
     name: '',
-    age: '',
-    sex: '',
-    race: '',
-    class: '',
+    age: 50,
+    sex: 'male',
+    race: 'human',
+    class: 'fighter',
   });
   const { handleHero } = useContext(UserContext);
 
@@ -78,6 +78,7 @@ function Create() {
         name='name'
         value={formData.name}
         onChange={handleInputChange}
+        required
       />
 
       <TextField
@@ -89,10 +90,11 @@ function Create() {
         type='number'
         value={formData.age}
         onChange={handleInputChange}
-        inputProps={{ min: 5, max: 1000, step: 5 }}
+        inputProps={{ min: 8, max: 1000, step: 1 }}
+        required
       />
 
-      <FormControl fullWidth margin='normal'>
+      <FormControl fullWidth margin='normal' required>
         <InputLabel id='sex-label'>Sex</InputLabel>
         <Select
           labelId='sex-label'
@@ -114,7 +116,7 @@ function Create() {
           <SelectionCard
             key={option.value}
             label={option.label}
-            image={option.image + '-'+ formData.sex +'.png'}
+            image={option.image + '-' + formData.sex + '.png'}
             value={option.value}
             selected={formData.race === option.value}
             onClick={() => handleSelectionChange('race', option.value)}
