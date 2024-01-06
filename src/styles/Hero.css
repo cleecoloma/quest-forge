@@ -6,22 +6,36 @@
   justify-content: center;
   text-align: center;
   width: 1300px;
+  margin-top: 80px;
+  min-height: calc(100vh - 80px);
 }
 
 #hero-motto h1 {
-  font-family: 'Ultra', serif;
+  font-family: 'Roboto Mono', monospace;
   font-size: 250%;
+  margin: 2rem 0 0;
   color: #b92d15;
 }
 
 #hero-motto h2 {
-  font-family: 'Red Hat Display', sans-serif;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 100;
   color: #ccced0;
 }
 
 #hero-image {
-  padding: 2rem;
-  width: 750px;
+  margin: 2rem 0;
+  width: 800px;
+  border-radius: 1rem 4rem;
+}
+
+#button-container {
+  margin: 2rem 0 0;
+}
+
+#create-button {
+  width: 20rem;
+  height: 3rem;
 }
 
 @media only screen and (min-width: 1221px) and (max-width: 1440px) {
