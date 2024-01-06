@@ -10,6 +10,7 @@ import {
   Select,
 } from '@mui/material';
 import { UserContext } from '../context/User';
+import SelectionCard from './SelectionCard';
 import '../styles/Create.css';
 
 function Create() {
@@ -20,6 +21,22 @@ function Create() {
     class: '',
   });
   const { handleHero } = useContext(UserContext);
+
+  const raceOptions = [
+    { label: 'Human', value: 'human', image: '/images/human' },
+    { label: 'Elf', value: 'elf', image: '/images/elf' },
+    { label: 'Dwarf', value: 'dwarf', image: '/images/dwarf' },
+    { label: 'Halfling', value: 'halfling', image: '/images/halfling' },
+    { label: 'Dragonborn', value: 'dragonborn', image: '/images/dragonborn' },
+  ];
+
+  const classOptions = [
+    { label: 'Fighter', value: 'fighter', image: '/images/fighter' },
+    { label: 'Wizard', value: 'wizard', image: '/images/wizard' },
+    { label: 'Cleric', value: 'cleric', image: '/images/cleric' },
+    { label: 'Rogue', value: 'rogue', image: '/images/rogue' },
+    { label: 'Paladin', value: 'paladin', image: '/images/paladin' },
+  ];
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
