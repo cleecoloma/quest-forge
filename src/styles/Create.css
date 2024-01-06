@@ -38,8 +38,9 @@
 .image-logo {
   position: absolute;
   width: 10rem;
-  right: 3rem;
-  top: 2rem;
+  right: 3.5rem;
+  top: 2.5rem;
+  filter: drop-shadow(0 0 6px rgb(115, 115, 115));
 }
 
 #create-right h3 {
@@ -50,7 +51,8 @@
   font-size: 250%;
   text-align: center;
   font-family: 'Merriweather', serif;
-  color: #9A3B3B;
-  border: 2px solid #9A3B3B;
+  color: #9a3b3b;
+  border: 2px solid #9a3b3b;
   border-radius: 1rem 2rem;
+  background-color: rgb(220, 220, 220);
 }

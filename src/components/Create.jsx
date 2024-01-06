@@ -24,22 +24,6 @@ function Create() {
   });
   const { handleHero } = useContext(UserContext);
 
-  const raceOptions = [
-    { label: 'Human', value: 'human', image: '/images/human' },
-    { label: 'Elf', value: 'elf', image: '/images/elf' },
-    { label: 'Dwarf', value: 'dwarf', image: '/images/dwarf' },
-    { label: 'Halfling', value: 'halfling', image: '/images/halfling' },
-    { label: 'Dragonborn', value: 'dragonborn', image: '/images/dragonborn' },
-  ];
-
-  const classOptions = [
-    { label: 'Fighter', value: 'fighter', image: '/images/fighter.png' },
-    { label: 'Wizard', value: 'wizard', image: '/images/wizard.png' },
-    { label: 'Cleric', value: 'cleric', image: '/images/cleric.png' },
-    { label: 'Rogue', value: 'rogue', image: '/images/rogue.png' },
-    { label: 'Paladin', value: 'paladin', image: '/images/paladin.png' },
-  ];
-
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     const updatedValue = name === 'age' ? Number(value) : value;
