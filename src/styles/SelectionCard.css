@@ -3,5 +3,13 @@
   flex-wrap: wrap;
   gap: 10px;
   justify-content: space-between;
-  padding: 2rem 0;
+  padding: 1rem 0;
+}
+
+.selection-card-title {
+  margin: 0 !important;
+}
+
+.selection-card-image {
+  margin-top: 1rem !important;
 }

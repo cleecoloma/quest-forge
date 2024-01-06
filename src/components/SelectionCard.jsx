@@ -16,9 +16,20 @@ function SelectionCard({ label, image, value, selected, onClick }) {
       style={{ border: selected ? '2px solid red' : '' }}
     >
       <CardActionArea>
-        <CardMedia component='img' height='150' image={image} alt={label} />
+        <CardMedia
+          component='img'
+          height='160'
+          image={image}
+          alt={label}
+          className='selection-card-image'
+        />
         <CardContent>
-          <Typography gutterBottom variant='h5' component='div'>
+          <Typography
+            gutterBottom
+            variant='h6'
+            component='div'
+            className='selection-card-title'
+          >
             {label}
           </Typography>
         </CardContent>

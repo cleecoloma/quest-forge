@@ -66,7 +66,6 @@ function Create() {
     <form
       id='create-form'
       onSubmit={handleSubmit}
-      style={{ maxWidth: 1000, margin: 'auto' }}
     >
       <h2 className='form-title'>Create your hero!</h2>
 
