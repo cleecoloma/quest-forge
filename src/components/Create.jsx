@@ -100,7 +100,7 @@ function Create() {
             </Select>
           </FormControl>
 
-          <FormControl fullWidth margin='normal'>
+          <FormControl fullWidth margin='normal' required>
             <InputLabel id='race-label'>Race</InputLabel>
             <Select
               labelId='race-label'
@@ -117,7 +117,7 @@ function Create() {
             </Select>
           </FormControl>
 
-          <FormControl fullWidth margin='normal'>
+          <FormControl fullWidth margin='normal' required>
             <InputLabel id='class-label'>Class</InputLabel>
             <Select
               labelId='class-label'
