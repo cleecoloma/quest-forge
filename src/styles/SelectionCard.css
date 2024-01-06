@@ -1,0 +1,20 @@
+.card-selection-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.selection-card-title {
+  margin: 0 !important;
+}
+
+.selection-card-image {
+  margin: 1rem 0 3rem !important;
+}
+
+#card-area {
+  border-radius: 30% 10%;
+  margin: 2rem 3rem;
+}

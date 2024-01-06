@@ -6,6 +6,7 @@ const userSchema = new dynamoose.Schema({
     hashKey: true,
   },
   name: String,
+  sex: String,
   age: Number,
   race: String,
   class: String,
@@ -27,6 +28,7 @@ exports.handler = async (event) => {
     }
 
     userToUpdate.name = requestBody.name || userToUpdate.name;
+    userToUpdate.sex = requestBody.sex || userToUpdate.sex;
     userToUpdate.age = requestBody.age || userToUpdate.age;
     userToUpdate.race = requestBody.race || userToUpdate.race;
     userToUpdate.class = requestBody.class || userToUpdate.class;

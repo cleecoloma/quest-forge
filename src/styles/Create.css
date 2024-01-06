@@ -1,7 +1,13 @@
+#create-container {
+  margin: 6rem auto;
+  width: 1300px;
+  display: flex;
+}
+
 #create-form {
-  background-color: #9bc2c6;
   padding: 4rem;
   border-radius: 1rem;
+  background-color: #9bc2c6;
 }
 
 .form-title {
@@ -12,6 +18,39 @@
 }
 
 #create-submit {
-  margin-top: 1rem;
   height: 3rem;
+}
+
+.card-selection-title {
+  color: #333;
+  width: 5rem;
+}
+
+#create-left {
+  width: 50%;
+}
+
+#create-right {
+  width: 50%;
+  position: relative;
+}
+
+.image-logo {
+  position: absolute;
+  width: 10rem;
+  right: 3rem;
+  top: 2rem;
+}
+
+#create-right h3 {
+  position: absolute;
+  width: 25rem;
+  left: 4.5rem;
+  bottom: 3.5rem;
+  font-size: 250%;
+  text-align: center;
+  font-family: 'Merriweather', serif;
+  color: #9A3B3B;
+  border: 2px solid #9A3B3B;
+  border-radius: 1rem 2rem;
 }
