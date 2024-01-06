@@ -7,7 +7,7 @@ import '../styles/Hero.css';
 
 const SERVER_URL = import.meta.env.VITE_SERVER_URL;
 
-function Hero() {
+function QuestForge() {
   const [data, setData] = useState(null);
   const [userChoice, setUserChoice] = useState(null);
   const navigate = useNavigate();
@@ -125,4 +125,4 @@ function Hero() {
   );
 }
 
-export default Hero;
+export default QuestForge;

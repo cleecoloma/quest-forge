@@ -79,7 +79,7 @@ exports.handler = async (event) => {
       const openAi = openAiResponse.data.choices[0].message.content;
       console.log('Here is our open ai response before being parsed:', openAi);
       const params = {
-        FunctionName: 'characterRoll',
+        FunctionName: 'quest-roll',
         InvocationType: 'RequestResponse',
         Payload: JSON.stringify(openAi),
       };
