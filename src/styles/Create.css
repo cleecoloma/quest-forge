@@ -137,7 +137,7 @@
   }
 }
 
-@media only screen and (min-width: 551px) and (max-width: 800px) {
+@media only screen and (max-width: 800px) {
   #create-container {
     max-width: 540px;
     min-height: auto;
@@ -168,7 +168,6 @@
   }
 
   #create-form {
-    height: 130%;
     border: none;
     padding: 0;
     margin: 0;
@@ -186,11 +185,25 @@
     max-width: 400px;
     min-height: auto;
   }
+
+  #create-right {
+    width: 100%;
+    order: -1;
+  }
+
+  .form-title {
+    font-size: 150%;
+  }
 }
 
 @media only screen and (max-width: 400px) {
   #create-container {
     max-width: 350px;
     padding: 0 4px;
+  }
+
+  .image-logo {
+    width: 5rem;
+    top: 15rem;
   }
 }
