@@ -137,7 +137,6 @@ function Create() {
           value={formData.value}
           selected={formData.class}
         />
-        {formData.name ? <h3>{formData.name}</h3> : null}
         <img
           className='image-logo'
           src={'/images/' + formData.class + '.png'}
