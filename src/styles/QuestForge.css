@@ -60,6 +60,28 @@
   font-weight: 500;
 }
 
+#quest-options {
+  position: absolute;
+  top: 22rem;
+  width: 30rem;
+  color: #511818;
+  font-family: 'Edu QLD Beginner', cursive;
+  letter-spacing: 1.5px;
+  font-size: 150%;
+  font-weight: 500;
+}
+
+#submit-choice-button {
+  margin-top: 1rem;
+  width: 18rem;
+  height: 3rem;
+  background-color: #511818;
+  font-family: 'Edu QLD Beginner', cursive;
+  text-transform: none;
+  letter-spacing: 3px;
+  font-size: 90%;
+}
+
 #reset-button {
   position: absolute;
   background-color: #aa5656;

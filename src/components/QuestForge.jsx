@@ -65,7 +65,7 @@ function QuestForge() {
             onChange={(e) => setUserChoice(option)}
             checked={userChoice === option}
           />
-          <label htmlFor={`option${index}`}>{option}</label>
+          <label htmlFor={`option${index}`}>{' ' + option}</label>
         </div>
       ));
     } else {
@@ -105,7 +105,13 @@ function QuestForge() {
                 <legend>Options</legend>
                 <div id='optionsList'>{renderOptions()}</div>
               </fieldset>
-              <button type='submit'>Submit Choice</button>
+              <Button
+                variant='contained'
+                id='submit-choice-button'
+                type='submit'
+              >
+                Submit Choice
+              </Button>
             </form>
           ) : null}
         </div>
