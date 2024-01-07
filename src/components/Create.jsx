@@ -4,7 +4,6 @@ import React, { useState, useContext } from 'react';
 import {
   TextField,
   Button,
-  Typography,
   MenuItem,
   FormControl,
   InputLabel,
@@ -23,22 +22,6 @@ function Create() {
     class: 'fighter',
   });
   const { handleHero } = useContext(UserContext);
-
-  const raceOptions = [
-    { label: 'Human', value: 'human', image: '/images/human' },
-    { label: 'Elf', value: 'elf', image: '/images/elf' },
-    { label: 'Dwarf', value: 'dwarf', image: '/images/dwarf' },
-    { label: 'Halfling', value: 'halfling', image: '/images/halfling' },
-    { label: 'Dragonborn', value: 'dragonborn', image: '/images/dragonborn' },
-  ];
-
-  const classOptions = [
-    { label: 'Fighter', value: 'fighter', image: '/images/fighter.png' },
-    { label: 'Wizard', value: 'wizard', image: '/images/wizard.png' },
-    { label: 'Cleric', value: 'cleric', image: '/images/cleric.png' },
-    { label: 'Rogue', value: 'rogue', image: '/images/rogue.png' },
-    { label: 'Paladin', value: 'paladin', image: '/images/paladin.png' },
-  ];
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -70,7 +53,7 @@ function Create() {
             name='name'
             value={formData.name}
             onChange={handleInputChange}
-            inputProps={{ maxLength: 15 }}
+            inputProps={{ maxLength: 15, style: { textAlign: 'center' } }}
             required
           />
 
@@ -83,7 +66,7 @@ function Create() {
             type='number'
             value={formData.age}
             onChange={handleInputChange}
-            inputProps={{ min: 8, max: 1000, step: 1 }}
+            inputProps={{ min: 8, max: 1000, step: 1, style: {textAlign: 'center'} }}
             required
           />
 
@@ -139,7 +122,6 @@ function Create() {
             id='create-submit'
             type='submit'
             variant='contained'
-            color='warning'
             fullWidth
             style={{ marginTop: 20 }}
           >

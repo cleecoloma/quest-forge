@@ -1,45 +1,62 @@
 #create-container {
-  margin: 6rem auto;
-  width: 1300px;
+  margin: 6rem auto 0;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 1300px;
+  margin-top: 80px;
+  min-height: calc(100vh - 80px);
 }
 
 #create-form {
-  padding: 4rem;
-  border-radius: 1rem;
-  background-color: #9bc2c6;
+  padding: 1rem 2rem;
+  background-color: #b19470;
+  width: 80%;
+  border: 5px solid #662c05;
+}
+
+#create-left,
+#create-right {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#create-left {
+  padding: 2rem 3rem;
+}
+
+#create-right {
+  position: relative;
 }
 
 .form-title {
-  font-family: 'Ultra', serif;
+  font-family: 'Roboto Mono', monospace;
   text-align: center;
   color: #333;
   margin-bottom: 20px;
+  font-size: 220%;
 }
 
 #create-submit {
   height: 3rem;
+  font-size: 110%;
+  background-color: #9d5215;
 }
 
 .card-selection-title {
-  color: #333;
+  color: #43766c;
   width: 5rem;
-}
-
-#create-left {
-  width: 50%;
-}
-
-#create-right {
-  width: 50%;
-  position: relative;
 }
 
 .image-logo {
   position: absolute;
   width: 10rem;
-  right: 3rem;
-  top: 2rem;
+  right: 3.5rem;
+  top: 2.5rem;
+  filter: drop-shadow(0 0 6px rgb(92, 16, 16));
 }
 
 #create-right h3 {
@@ -50,7 +67,48 @@
   font-size: 250%;
   text-align: center;
   font-family: 'Merriweather', serif;
-  color: #9A3B3B;
-  border: 2px solid #9A3B3B;
+  color: #aa5656;
+  border: 2px solid #aa5656;
   border-radius: 1rem 2rem;
+  background-color: rgb(220, 220, 220);
+}
+
+@media only screen and (min-width: 1221px) and (max-width: 1440px) {
+  #create-container {
+    max-width: 1200px;
+  }
+}
+
+@media only screen and (min-width: 1001px) and (max-width: 1220px) {
+  #create-container {
+    max-width: 950px;
+  }
+}
+
+@media only screen and (min-width: 801px) and (max-width: 1000px) {
+  #create-container {
+    max-width: 750px;
+    min-height: auto;
+  }
+}
+
+@media only screen and (min-width: 551px) and (max-width: 800px) {
+  #create-container {
+    max-width: 540px;
+    min-height: auto;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  #create-container {
+    max-width: 400px;
+    min-height: auto;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #create-container {
+    max-width: 350px;
+    padding: 0 4px;
+  }
 }

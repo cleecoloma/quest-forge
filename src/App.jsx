@@ -12,21 +12,23 @@ function App() {
   return (
     <Router>
       <UserProvider>
-        <Header />
-        <Routes>
-          <Route
-            exact
-            path='/'
-            element={
-              <>
-                <Hero />
-                <Footer />
-              </>
-            }
-          ></Route>
-          <Route exact path='/create' element={<Create />}></Route>
-          <Route exact path='/quest' element={<QuestForge />}></Route>
-        </Routes>
+        <div className='content'>
+          <Header />
+          <Routes>
+            <Route
+              exact
+              path='/'
+              element={
+                <>
+                  <Hero />
+                </>
+              }
+            ></Route>
+            <Route exact path='/create' element={<Create />}></Route>
+            <Route exact path='/quest' element={<QuestForge />}></Route>
+          </Routes>
+          <Footer />
+        </div>
       </UserProvider>
     </Router>
   );

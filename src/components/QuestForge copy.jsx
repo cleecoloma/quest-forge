@@ -11,7 +11,7 @@ function QuestForge() {
   const [data, setData] = useState(null);
   const [userChoice, setUserChoice] = useState(null);
   const navigate = useNavigate();
-  const { hero, handleHero } = useContext(UserContext);
+  const { handleHero } = useContext(UserContext);
 
   useEffect(() => {
     fetchDataAndDisplay();
@@ -75,42 +75,52 @@ function QuestForge() {
 
   return (
     <div id='quest-container'>
-      <div id='quest-left'>
-        {hero ? (
-          <>
-            <div id='hero-properties'>
-              <h2>{hero.name}</h2>
-              <h2>
-                {hero.race} {hero.class}
-              </h2>
-    
+      <h1>Quest Forge</h1>
+      <div id='userInfo'>
+        {data ? (
+          data.deathScene ? (
+            <div>
+              <p id='death-scene'>{data.deathScene}</p>
             </div>
-            <img
-              id='quest-hero-race'
-              src={'/images/' + hero.race + '-' + hero.sex + '.png'}
-              alt='hero race'
-            />
-            <img
-              id='quest-hero-class'
-              src={'/images/' + hero.class + '.png'}
-              alt='hero class'
-            />
-          </>
+          ) : (
+            <div>
+              <p>
+                Name: <span id='userName'>{data.user.name}</span>
+              </p>
+              <p>
+                Age: <span id='userAge'>{data.user.age}</span>
+              </p>
+              <p>
+                Race: <span id='userRace'>{data.user.race}</span>
+              </p>
+              <p>
+                Class: <span id='userClass'>{data.user.class}</span>
+              </p>
+            </div>
+          )
         ) : (
           <p>Loading...</p>
         )}
       </div>
-      <div id='quest-right'>
-        <Button
-          id='reset-button'
-          type='submit'
-          variant='contained'
-          color='error'
-          onClick={handleReset}
-        >
-          Reset
-        </Button>
-      </div>
+      {data && data.scene ? <div id='scene'>{data.scene}</div> : null}
+      {data && !data.deathScene ? (
+        <form id='optionsForm' onSubmit={handleUserChoice}>
+          <fieldset>
+            <legend>Options</legend>
+            <div id='optionsList'>{renderOptions()}</div>
+          </fieldset>
+          <button type='submit'>Submit Choice</button>
+        </form>
+      ) : null}
+      <Button
+        type='submit'
+        variant='contained'
+        color='error'
+        onClick={handleReset}
+        fullWidth
+      >
+        Reset
+      </Button>
     </div>
   );
 }
