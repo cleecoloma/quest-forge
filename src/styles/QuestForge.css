@@ -16,6 +16,7 @@
 }
 #quest-right {
   width: 60%;
+  position: relative;
 }
 
 #quest-hero-race {
@@ -48,14 +49,10 @@
   font-size: 150%;
 }
 
-#quest-right {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 #reset-button {
+  position: absolute;
   background-color: #aa5656;
   width: 8rem;
+  bottom: 4.5rem;
+  right: 13rem;
 }
