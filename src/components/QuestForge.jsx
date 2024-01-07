@@ -65,7 +65,7 @@ function QuestForge() {
             onChange={(e) => setUserChoice(option)}
             checked={userChoice === option}
           />
-          <label htmlFor={`option${index}`}>{option}</label>
+          <label htmlFor={`option${index}`}>{' ' + option}</label>
         </div>
       ));
     } else {
@@ -80,20 +80,14 @@ function QuestForge() {
           <>
             <div id='hero-properties'>
               <h2>{hero.name}</h2>
-              <h2>
-                {hero.race} {hero.class}
-              </h2>
-    
+              <h3>
+                a {hero.race} {hero.class}
+              </h3>
             </div>
             <img
               id='quest-hero-race'
               src={'/images/' + hero.race + '-' + hero.sex + '.png'}
               alt='hero race'
-            />
-            <img
-              id='quest-hero-class'
-              src={'/images/' + hero.class + '.png'}
-              alt='hero class'
             />
           </>
         ) : (
@@ -101,6 +95,26 @@ function QuestForge() {
         )}
       </div>
       <div id='quest-right'>
+        <div id='quest-scene'>
+          {data && data.scene ? <div id='scene'>{data.scene}</div> : null}
+        </div>
+        <div id='quest-options'>
+          {data && !data.deathScene ? (
+            <form id='optionsForm' onSubmit={handleUserChoice}>
+              <fieldset>
+                <legend>Options</legend>
+                <div id='optionsList'>{renderOptions()}</div>
+              </fieldset>
+              <Button
+                variant='contained'
+                id='submit-choice-button'
+                type='submit'
+              >
+                Submit Choice
+              </Button>
+            </form>
+          ) : null}
+        </div>
         <Button
           id='reset-button'
           type='submit'
