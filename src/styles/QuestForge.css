@@ -1,93 +1,53 @@
-body {
-  background-color: #2c3e50;
-  color: #fff;
-  font-family: 'Arial', sans-serif;
+#quest-container {
+  margin: 6rem auto 0;
+  display: flex;
+  text-align: center;
+  width: 1300px;
+  margin-top: 80px;
+  min-height: calc(100vh - 80px);
+  background-image: url('/images/paper.png');
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-h1 {
-  color: #e67e22;
+#quest-left {
+  width: 40%;
+  position: relative;
+}
+#quest-right {
+  width: 60%;
 }
 
-#userInfo {
-  margin: 20px 0;
-  padding: 10px;
-  background-color: #34495e;
-  border: 2px solid #e67e22;
-  border-radius: 5px;
+#quest-hero-race {
+  position: absolute;
+  left: 3rem;
+  bottom: 8rem;
+  filter: drop-shadow(0 0 16px rgb(255, 255, 255));
 }
 
-#userName, #userAge, #userRace, #userClass {
-  font-weight: bold;
-  color: #e67e22;
+#quest-hero-class {
+  position: absolute;
+  width: 8rem;
+  left: 12rem;
+  bottom: 3.5rem;
 }
 
-#scene {
-  font-size: 200%;
-  margin: 20px 0;
-  padding: 10px;
-  background-color: #2e4053;
-  border: 2px solid #e67e22;
-  border-radius: 5px;
+#hero-properties {
+  position: absolute;
+  right: 0;
+  bottom: 6rem;
+  text-align: left;
+  color: #aa5656;
 }
 
-#death-scene {
-  font-size: 200%;
-  margin: 20px 0;
-  padding: 10px;
-  background-color: #2e4053;
-  border: 2px solid #e67e22;
-  border-radius: 5px;
-}
-
-#optionsForm {
-  margin: 20px 0;
-}
-
-legend {
-  font-size: 140%;
-  font-weight: bold;
-  color: #e67e22;
-}
-
-#optionsList {
+#quest-right {
   display: flex;
   flex-direction: column;
-  font-size: 150%;
+  justify-content: center;
+  align-items: center;
 }
 
-label {
-  color: #e67e22;
-  margin-left: 5px;
-}
-
-input[type='radio'] {
-  margin-right: 5px;
-}
-
-button {
-  background-color: #e67e22;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-button:hover {
-  background-color: #d35400;
-}
-
-div#userInfo p {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-span {
-  font-weight: bold;
-  color: #e67e22;
-}
-
-button {
-  margin-top: 1rem;
+#reset-button {
+  background-color: #aa5656;
+  width: 8rem;
 }
