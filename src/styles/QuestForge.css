@@ -45,8 +45,19 @@
 #hero-properties h3 {
   font-family: 'Oooh Baby', cursive;
   letter-spacing: 3px;
-  color: rgb(26, 25, 25);
   font-size: 150%;
+  color: rgb(26, 25, 25);
+}
+
+#quest-scene {
+  position: absolute;
+  top: 10rem;
+  width: 30rem;
+  color: #511818;
+  font-family: 'Edu QLD Beginner', cursive;
+  letter-spacing: 1.5px;
+  font-size: 150%;
+  font-weight: 500;
 }
 
 #reset-button {
