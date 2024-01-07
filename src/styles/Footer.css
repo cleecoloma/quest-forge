@@ -32,7 +32,8 @@
 }
 
 #footer-container span {
-  color: #d32f2f;
+  color: #9b4f10;
+  font-family: 'Roboto Mono', monospace;
 }
 
 @media only screen and (min-width: 1221px) and (max-width: 1440px) {

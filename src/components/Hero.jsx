@@ -15,11 +15,10 @@ function Hero() {
     <div id='hero-container'>
       <div id='hero-motto'>
         <h1>Embark on Legends, Craft Your Destiny</h1>
-        <h2>Where Every Adventure is Handcrafted!</h2>
+        <h2>Where every adventure is handcrafted!</h2>
         <div id='button-container'>
           <Button
             variant='contained'
-            color='warning'
             id='create-button'
             onClick={handleCreateClick}
           >

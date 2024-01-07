@@ -14,13 +14,14 @@
   font-family: 'Roboto Mono', monospace;
   font-size: 250%;
   margin: 2rem 0 0;
-  color: #b92d15;
+  color: #43766C;
 }
 
 #hero-motto h2 {
-  font-family: 'Roboto Mono', monospace;
-  font-weight: 100;
+  font-family: 'Oooh Baby', cursive;
+  font-size: 200%;
   color: #ccced0;
+  letter-spacing: 3px;
 }
 
 #hero-image {
@@ -37,6 +38,7 @@
   width: 20rem;
   height: 3rem;
   font-size: 110%;
+  background-color: #9b4f10;
 }
 
 @media only screen and (min-width: 1221px) and (max-width: 1440px) {

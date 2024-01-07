@@ -43,7 +43,7 @@ function Header() {
   console.log("Is there a hero", hero)
 
   return (
-    <AppBar position='fixed' color='error'>
+    <AppBar position='fixed' color='error' id='header-bar-style'>
       <Container maxWidth='xl'>
         <Toolbar disableGutters>
           <img

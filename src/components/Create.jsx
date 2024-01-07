@@ -4,7 +4,6 @@ import React, { useState, useContext } from 'react';
 import {
   TextField,
   Button,
-  Typography,
   MenuItem,
   FormControl,
   InputLabel,
@@ -123,7 +122,6 @@ function Create() {
             id='create-submit'
             type='submit'
             variant='contained'
-            color='warning'
             fullWidth
             style={{ marginTop: 20 }}
           >
