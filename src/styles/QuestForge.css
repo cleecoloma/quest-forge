@@ -91,3 +91,43 @@
   bottom: 4.5rem;
   right: 13rem;
 }
+
+@media only screen and (min-width: 1221px) and (max-width: 1440px) {
+  #quest-container {
+    max-width: 1200px;
+  }
+}
+
+@media only screen and (min-width: 1001px) and (max-width: 1220px) {
+  #quest-container {
+    max-width: 950px;
+  }
+}
+
+@media only screen and (min-width: 801px) and (max-width: 1000px) {
+  #quest-container {
+    max-width: 750px;
+    min-height: auto;
+  }
+}
+
+@media only screen and (min-width: 551px) and (max-width: 800px) {
+  #quest-container {
+    max-width: 540px;
+    min-height: auto;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  #quest-container {
+    max-width: 400px;
+    min-height: auto;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #quest-container {
+    max-width: 350px;
+    padding: 0 4px;
+  }
+}
