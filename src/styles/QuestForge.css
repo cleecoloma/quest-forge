@@ -51,8 +51,9 @@
 
 #quest-scene {
   position: absolute;
-  top: 10rem;
-  width: 30rem;
+  bottom: 26rem;
+  right: 16rem;
+  width: 35rem;
   color: #511818;
   font-family: 'Edu QLD Beginner', cursive;
   letter-spacing: 1.5px;
@@ -64,7 +65,7 @@
   position: absolute;
   top: 22rem;
   width: 30rem;
-  color: #511818;
+  color: #2c1919;
   font-family: 'Edu QLD Beginner', cursive;
   letter-spacing: 1.5px;
   font-size: 150%;
@@ -84,7 +85,8 @@
 
 #reset-button {
   position: absolute;
-  background-color: #aa5656;
+  background-color: #c02525;
+  letter-spacing: 3px;
   width: 8rem;
   bottom: 4.5rem;
   right: 13rem;
