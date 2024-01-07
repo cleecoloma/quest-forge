@@ -18,15 +18,17 @@
   }
 }
 
-@media only screen and (min-width: 801px) and (max-width: 1000px) {
-  .card-selection-container {
-    position: relative;
-  }
+@media only screen and (max-width: 1000px) {
   #card-area {
-    position: absolute;
     border-radius: 0;
     box-shadow: none;
     background: transparent;
     width: 100%;
+    margin: 0;
+  }
+}
+
+@media only screen and (min-width: 551px) and (max-width: 800px) {
+  .card-selection-container {
   }
 }

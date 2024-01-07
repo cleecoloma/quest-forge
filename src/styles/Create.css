@@ -111,11 +111,11 @@
   }
 
   #create-left {
-    width: 40%;
+    width: 50%;
   }
 
   #create-right {
-    width: 60%;
+    width: 50%;
   }
 
   .form-title {
@@ -125,7 +125,7 @@
   .image-logo {
     width: 8rem;
     right: 5rem;
-    top: 7rem;
+    top: 17rem;
   }
 
   #create-form {
@@ -141,6 +141,43 @@
   #create-container {
     max-width: 540px;
     min-height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #create-left {
+    width: 90%;
+    margin: 0;
+    padding: 0 1rem 2rem;
+  }
+
+  #create-right {
+    width: 70%;
+    order: -1;
+  }
+
+  .form-title {
+    font-size: 180%;
+    margin-bottom: 8px;
+  }
+
+  .image-logo {
+    width: 7rem;
+    right: 3rem;
+    bottom: 7rem;
+  }
+
+  #create-form {
+    height: 130%;
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+  }
+
+  .smaller-text-field,
+  .smaller-form-control {
+    margin-top: 4px !important;
   }
 }
 
