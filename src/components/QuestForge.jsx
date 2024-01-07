@@ -80,20 +80,15 @@ function QuestForge() {
           <>
             <div id='hero-properties'>
               <h2>{hero.name}</h2>
-              <h2>
-                {hero.race} {hero.class}
-              </h2>
+              <h3>
+               a {hero.race} {hero.class}
+              </h3>
     
             </div>
             <img
               id='quest-hero-race'
               src={'/images/' + hero.race + '-' + hero.sex + '.png'}
               alt='hero race'
-            />
-            <img
-              id='quest-hero-class'
-              src={'/images/' + hero.class + '.png'}
-              alt='hero class'
             />
           </>
         ) : (

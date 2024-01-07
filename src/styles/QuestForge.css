@@ -21,23 +21,31 @@
 #quest-hero-race {
   position: absolute;
   left: 3rem;
-  bottom: 8rem;
-  filter: drop-shadow(0 0 16px rgb(255, 255, 255));
-}
-
-#quest-hero-class {
-  position: absolute;
-  width: 8rem;
-  left: 12rem;
-  bottom: 3.5rem;
+  bottom: 9rem;
+  filter: drop-shadow(0 0 1rem rgb(255, 255, 255));
 }
 
 #hero-properties {
   position: absolute;
-  right: 0;
-  bottom: 6rem;
+  left: 14rem;
+  bottom: 5rem;
   text-align: left;
-  color: #aa5656;
+  line-height: 1.5rem;
+  filter: drop-shadow(0 0 0.5rem rgb(255, 255, 255));
+}
+
+#hero-properties h2 {
+  font-family: 'Merriweather', serif;
+  font-size: 200%;
+  color: #511818;
+  text-decoration: underline;
+}
+
+#hero-properties h3 {
+  font-family: 'Oooh Baby', cursive;
+  letter-spacing: 3px;
+  color: rgb(26, 25, 25);
+  font-size: 150%;
 }
 
 #quest-right {
