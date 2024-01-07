@@ -13,6 +13,7 @@
   padding: 1rem 2rem;
   background-color: #b19470;
   width: 80%;
+  box-shadow: rgba(207, 94, 14, 0.5) 0px 0px 0px 3px;
 }
 
 #create-left,
@@ -46,7 +47,7 @@
 }
 
 .card-selection-title {
-  color: #43766C;
+  color: #43766c;
   width: 5rem;
 }
 
@@ -66,8 +67,8 @@
   font-size: 250%;
   text-align: center;
   font-family: 'Merriweather', serif;
-  color: #9a3b3b;
-  border: 2px solid #9a3b3b;
+  color: #aa5656;
+  border: 2px solid #aa5656;
   border-radius: 1rem 2rem;
   background-color: rgb(220, 220, 220);
 }

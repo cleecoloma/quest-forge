@@ -53,7 +53,7 @@ function Create() {
             name='name'
             value={formData.name}
             onChange={handleInputChange}
-            inputProps={{ maxLength: 15 }}
+            inputProps={{ maxLength: 15, style: { textAlign: 'center' } }}
             required
           />
 
@@ -66,7 +66,7 @@ function Create() {
             type='number'
             value={formData.age}
             onChange={handleInputChange}
-            inputProps={{ min: 8, max: 1000, step: 1 }}
+            inputProps={{ min: 8, max: 1000, step: 1, style: {textAlign: 'center'} }}
             required
           />
 
