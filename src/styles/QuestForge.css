@@ -91,3 +91,208 @@
   bottom: 4.5rem;
   right: 13rem;
 }
+
+#scene {
+  position: absolute;
+  bottom: -15rem;
+}
+
+#scene h2 {
+  margin-bottom: 1rem;
+  color: #d32f2f;
+  text-decoration: underline;
+}
+
+@media only screen and (min-width: 1221px) and (max-width: 1440px) {
+  #quest-container {
+    max-width: 1200px;
+  }
+
+  #quest-scene {
+    left: 0;
+  }
+}
+
+@media only screen and (min-width: 1001px) and (max-width: 1220px) {
+  #quest-container {
+    max-width: 950px;
+  }
+
+  #quest-scene {
+    right: 3rem;
+  }
+
+  #reset-button {
+    right: 3rem;
+  }
+
+  #hero-properties {
+    left: 3rem;
+  }
+
+  #quest-hero-race {
+    left: 0;
+    bottom: 9rem;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  #quest-container {
+    max-width: 750px;
+    display: flex;
+    background-size: 100% 95%;
+  }
+
+  #quest-left {
+    display: none;
+  }
+
+  #quest-right {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #quest-scene {
+    left: 6rem;
+  }
+
+  #reset-button {
+    right: 3rem;
+  }
+}
+
+@media only screen and (min-width: 551px) and (max-width: 800px) {
+  #quest-container {
+    max-width: 540px;
+    min-height: 500px;
+  }
+
+  #quest-scene {
+    width: 75%;
+    left: 4.25rem;
+    top: 8rem;
+    letter-spacing: 1px;
+    font-size: 120%;
+    margin-bottom: 1rem;
+    line-height: 1.6rem;
+    font-weight: 400;
+  }
+
+  #quest-options {
+    top: 17rem;
+    width: 28rem;
+    letter-spacing: 1px;
+    font-size: 115%;
+    font-weight: 400;
+    line-height: 1.5rem;
+  }
+
+  #submit-choice-button {
+    width: 20rem;
+    height: 2rem;
+    letter-spacing: 3px;
+    margin-top: 0.5rem;
+  }
+
+  #reset-button {
+    letter-spacing: 1px;
+    width: 6rem;
+    top: 3rem;
+    height: 2rem;
+    right: 1.5rem;
+  }
+
+  #scene {
+    top: 0rem;
+  }
+
+  #scene h2 {
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  #quest-container {
+    max-width: 400px;
+    min-height: 500px;
+  }
+
+  #quest-scene {
+    width: 80%;
+    left: 3rem;
+    top: 8.5rem;
+    letter-spacing: 1.5px;
+    font-size: 110%;
+    margin-bottom: 1rem;
+    line-height: 1.2rem;
+    font-weight: 400;
+    text-shadow: white 5px 0 12px;
+  }
+
+  #quest-options {
+    top: 17rem;
+    width: 22rem;
+    letter-spacing: 1px;
+    font-size: 105%;
+    font-weight: 400;
+    line-height: 1.2rem;
+    text-shadow: white 5px 0 12px;
+  }
+
+  #submit-choice-button {
+    width: 20rem;
+    height: 3rem;
+    letter-spacing: 3px;
+    margin-top: 1rem;
+  }
+
+  #reset-button {
+    letter-spacing: 1px;
+    width: 6rem;
+    top: 3rem;
+    height: 2rem;
+    right: 1.5rem;
+  }
+
+  #scene {
+    top: 0rem;
+  }
+
+  #scene h2 {
+    font-size: 130%;
+    margin-bottom: 1rem;
+    line-height: 2rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #quest-container {
+    max-width: 350px;
+    padding: 0 4px;
+  }
+
+  #quest-scene {
+    width: 80%;
+    left: 2rem;
+    top: 8.5rem;
+    font-size: 100%;
+    line-height: 1.1rem;
+  }
+
+  #quest-options {
+    top: 17.5rem;
+    width: 19rem;
+    font-size: 100%;
+    line-height: 1.1rem;
+  }
+
+  #submit-choice-button {
+    width: 100%;
+  }
+
+  #scene h2 {
+    margin-bottom: 1rem;
+  }
+}

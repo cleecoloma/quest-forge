@@ -32,7 +32,6 @@ function Create() {
     });
   };
 
-
   const handleSubmit = (event) => {
     event.preventDefault();
     handleHero(formData);
@@ -46,6 +45,7 @@ function Create() {
           <h2 className='form-title'>Create your hero!</h2>
 
           <TextField
+            style={{ marginTop: 0 }}
             label='Name'
             variant='outlined'
             fullWidth
@@ -58,6 +58,7 @@ function Create() {
           />
 
           <TextField
+            className='smaller-text-field'
             label='Age'
             variant='outlined'
             fullWidth
@@ -66,11 +67,21 @@ function Create() {
             type='number'
             value={formData.age}
             onChange={handleInputChange}
-            inputProps={{ min: 8, max: 1000, step: 1, style: {textAlign: 'center'} }}
+            inputProps={{
+              min: 8,
+              max: 1000,
+              step: 1,
+              style: { textAlign: 'center' },
+            }}
             required
           />
 
-          <FormControl fullWidth margin='normal' required>
+          <FormControl
+            fullWidth
+            margin='normal'
+            className='smaller-form-control'
+            required
+          >
             <InputLabel id='sex-label'>Sex</InputLabel>
             <Select
               labelId='sex-label'
@@ -84,7 +95,12 @@ function Create() {
             </Select>
           </FormControl>
 
-          <FormControl fullWidth margin='normal' required>
+          <FormControl
+            fullWidth
+            margin='normal'
+            className='smaller-form-control'
+            required
+          >
             <InputLabel id='race-label'>Race</InputLabel>
             <Select
               labelId='race-label'
@@ -101,7 +117,12 @@ function Create() {
             </Select>
           </FormControl>
 
-          <FormControl fullWidth margin='normal' required>
+          <FormControl
+            fullWidth
+            margin='normal'
+            className='smaller-form-control'
+            required
+          >
             <InputLabel id='class-label'>Class</InputLabel>
             <Select
               labelId='class-label'
@@ -137,7 +158,6 @@ function Create() {
           value={formData.value}
           selected={formData.class}
         />
-        {formData.name ? <h3>{formData.name}</h3> : null}
         <img
           className='image-logo'
           src={'/images/' + formData.class + '.png'}

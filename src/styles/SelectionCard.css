@@ -6,16 +6,29 @@
   padding: 1rem 0;
 }
 
-.selection-card-title {
-  margin: 0 !important;
-}
-
-.selection-card-image {
-  margin: 1rem 0 3rem !important;
-}
-
 #card-area {
   border-radius: 30% 10%;
   margin: 2rem 3rem;
   box-shadow: 0 0 200px #0b1f1b inset;
+}
+
+@media only screen and (min-width: 1001px) and (max-width: 1220px) {
+  #card-area {
+    margin: 2rem 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  #card-area {
+    border-radius: 0;
+    box-shadow: none;
+    background: transparent;
+    width: 100%;
+    margin: 0;
+  }
+}
+
+@media only screen and (min-width: 551px) and (max-width: 800px) {
+  .card-selection-container {
+  }
 }

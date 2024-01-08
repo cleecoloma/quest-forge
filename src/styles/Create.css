@@ -59,23 +59,18 @@
   filter: drop-shadow(0 0 6px rgb(92, 16, 16));
 }
 
-#create-right h3 {
-  position: absolute;
-  width: 25rem;
-  left: 4.5rem;
-  bottom: 3.5rem;
-  font-size: 250%;
-  text-align: center;
-  font-family: 'Merriweather', serif;
-  color: #aa5656;
-  border: 2px solid #aa5656;
-  border-radius: 1rem 2rem;
-  background-color: rgb(220, 220, 220);
-}
-
 @media only screen and (min-width: 1221px) and (max-width: 1440px) {
   #create-container {
     max-width: 1200px;
+  }
+
+  #create-left {
+    padding: 2rem 1rem;
+  }
+
+  #create-right h3 {
+    width: 22rem;
+    font-size: 200%;
   }
 }
 
@@ -83,19 +78,106 @@
   #create-container {
     max-width: 950px;
   }
-}
 
-@media only screen and (min-width: 801px) and (max-width: 1000px) {
-  #create-container {
-    max-width: 750px;
-    min-height: auto;
+  #create-left {
+    padding: 0;
+    width: 40%;
+  }
+
+  #create-form {
+    width: 90%;
+  }
+
+  .form-title {
+    font-size: 160%;
+  }
+
+  .image-logo {
+    width: 7rem;
+  }
+
+  #create-right {
+    width: 60%;
   }
 }
 
-@media only screen and (min-width: 551px) and (max-width: 800px) {
+@media only screen and (max-width: 1000px) {
+  #create-container {
+    max-width: 750px;
+    background-color: white;
+    box-shadow: 0 0 200px #0b1f1b inset;
+    margin-top: 110px;
+    min-height: auto;
+  }
+
+  #create-left {
+    width: 50%;
+  }
+
+  #create-right {
+    width: 50%;
+  }
+
+  .form-title {
+    font-size: 160%;
+  }
+
+  .image-logo {
+    width: 8rem;
+    right: 5rem;
+    top: 17rem;
+  }
+
+  #create-form {
+    width: 100%;
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+  }
+}
+
+@media only screen and (max-width: 800px) {
   #create-container {
     max-width: 540px;
     min-height: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+  }
+
+  #create-left {
+    width: 90%;
+    margin: 0;
+    padding: 0 1rem 2rem;
+  }
+
+  #create-right {
+    width: 70%;
+    order: -1;
+  }
+
+  .form-title {
+    font-size: 180%;
+    margin-bottom: 8px;
+  }
+
+  .image-logo {
+    width: 7rem;
+    right: 3rem;
+    bottom: 7rem;
+  }
+
+  #create-form {
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+  }
+
+  .smaller-text-field,
+  .smaller-form-control {
+    margin-top: 4px !important;
   }
 }
 
@@ -104,11 +186,25 @@
     max-width: 400px;
     min-height: auto;
   }
+
+  #create-right {
+    width: 100%;
+    order: -1;
+  }
+
+  .form-title {
+    font-size: 150%;
+  }
 }
 
 @media only screen and (max-width: 400px) {
   #create-container {
     max-width: 350px;
     padding: 0 4px;
+  }
+
+  .image-logo {
+    width: 5rem;
+    top: 15rem;
   }
 }
