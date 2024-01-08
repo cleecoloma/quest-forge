@@ -10,6 +10,35 @@
   background-repeat: no-repeat;
 }
 
+/* HTML: <div class="loader"></div> 
+Code snipper of loader is from the url below:
+https://css-loaders.com/dots/
+*/
+
+.loader {
+  position: absolute;
+  left: 13rem;
+  top: 21.5rem;
+  z-index: 100;
+  width: 60px;
+  aspect-ratio: 4;
+  --_g: no-repeat radial-gradient(circle closest-side, #511818 90%, #0000);
+  background: var(--_g) 0% 50%, var(--_g) 50% 50%, var(--_g) 100% 50%;
+  background-size: calc(100% / 3) 100%;
+  animation: l7 1s infinite linear;
+}
+@keyframes l7 {
+  33% {
+    background-size: calc(100% / 3) 0%, calc(100% / 3) 100%, calc(100% / 3) 100%;
+  }
+  50% {
+    background-size: calc(100% / 3) 100%, calc(100% / 3) 0%, calc(100% / 3) 100%;
+  }
+  66% {
+    background-size: calc(100% / 3) 100%, calc(100% / 3) 100%, calc(100% / 3) 0%;
+  }
+}
+
 #quest-left {
   width: 40%;
   position: relative;
@@ -51,7 +80,7 @@
 
 #quest-scene {
   position: absolute;
-  bottom: 26rem;
+  bottom: 26.5rem;
   right: 16rem;
   width: 35rem;
   color: #511818;
@@ -59,6 +88,7 @@
   letter-spacing: 1.5px;
   font-size: 150%;
   font-weight: 500;
+  text-shadow: white 5px 0 12px;
 }
 
 #quest-options {
@@ -70,6 +100,7 @@
   letter-spacing: 1.5px;
   font-size: 150%;
   font-weight: 500;
+  text-shadow: white 5px 0 12px;
 }
 
 #submit-choice-button {
@@ -94,7 +125,7 @@
 
 #scene {
   position: absolute;
-  bottom: -15rem;
+  bottom: -10rem;
 }
 
 #scene h2 {
@@ -108,8 +139,16 @@
     max-width: 1200px;
   }
 
+  #hero-properties {
+    left: 12rem;
+  }
+
   #quest-scene {
-    left: 0;
+    left: -2.5rem;
+  }
+
+  .loader {
+    left: 13rem;
   }
 }
 
@@ -154,6 +193,10 @@
     align-items: center;
   }
 
+  .loader {
+    left: 21.5rem;
+  }
+
   #quest-scene {
     left: 6rem;
   }
@@ -163,30 +206,40 @@
   }
 }
 
-@media only screen and (min-width: 551px) and (max-width: 800px) {
+@media only screen and (max-width: 800px) {
   #quest-container {
     max-width: 540px;
     min-height: 500px;
   }
 
+  .loader {
+    position: static;
+  }
+
+  #quest-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   #quest-scene {
+    position: static;
     width: 75%;
-    left: 4.25rem;
-    top: 8rem;
     letter-spacing: 1px;
     font-size: 120%;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     line-height: 1.6rem;
     font-weight: 400;
   }
 
   #quest-options {
-    top: 17rem;
-    width: 28rem;
+    position: static;
     letter-spacing: 1px;
     font-size: 115%;
     font-weight: 400;
     line-height: 1.5rem;
+    margin-top: 0.5rem;
   }
 
   #submit-choice-button {
@@ -205,11 +258,11 @@
   }
 
   #scene {
-    top: 0rem;
+    position: static;
   }
 
   #scene h2 {
-    margin-bottom: 2.5rem;
+    margin-bottom: 1rem;
   }
 }
 
@@ -221,24 +274,18 @@
 
   #quest-scene {
     width: 80%;
-    left: 3rem;
-    top: 8.5rem;
     letter-spacing: 1.5px;
     font-size: 110%;
-    margin-bottom: 1rem;
     line-height: 1.2rem;
     font-weight: 400;
-    text-shadow: white 5px 0 12px;
   }
 
   #quest-options {
-    top: 17rem;
     width: 22rem;
     letter-spacing: 1px;
     font-size: 105%;
     font-weight: 400;
     line-height: 1.2rem;
-    text-shadow: white 5px 0 12px;
   }
 
   #submit-choice-button {
@@ -256,10 +303,6 @@
     right: 1.5rem;
   }
 
-  #scene {
-    top: 0rem;
-  }
-
   #scene h2 {
     font-size: 130%;
     margin-bottom: 1rem;
@@ -275,14 +318,11 @@
 
   #quest-scene {
     width: 80%;
-    left: 2rem;
-    top: 8.5rem;
     font-size: 100%;
     line-height: 1.1rem;
   }
 
   #quest-options {
-    top: 17.5rem;
     width: 19rem;
     font-size: 100%;
     line-height: 1.1rem;

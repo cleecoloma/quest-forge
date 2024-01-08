@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { Button } from '@mui/material';
 import { UserContext } from '../context/User';
+import { LoadingContext } from '../context/Loading';
 import { useNavigate } from 'react-router-dom';
 import '../styles/QuestForge.css';
 
@@ -12,6 +13,7 @@ function QuestForge() {
   const [userChoice, setUserChoice] = useState(null);
   const navigate = useNavigate();
   const { hero, handleHero } = useContext(UserContext);
+  const { loading, setLoading } = useContext(LoadingContext);
 
   useEffect(() => {
     fetchDataAndDisplay();
@@ -23,27 +25,34 @@ function QuestForge() {
 
   const fetchDataAndDisplay = async () => {
     try {
-      // Make a POST request using Axios
+      setLoading(true);
       const response = await axios.post(`${SERVER_URL}/quest`);
       const responseData = response.data;
       console.log("HERE'S THE RESPONSE ", response);
-
-      // Populate the form with the initial response
       populateFormWithData(responseData);
     } catch (error) {
       console.error('Error:', error);
+    } finally {
+      setLoading(false);
     }
   };
 
   const handleUserChoice = async (event) => {
     event.preventDefault();
-    if (userChoice !== null && data !== null) {
-      const response = await axios.post(`${SERVER_URL}/quest`, {
-        ...data,
-        userChoice,
-      });
-      const updatedData = response.data;
-      populateFormWithData(updatedData);
+    try {
+      setLoading(true);
+      if (userChoice !== null && data !== null) {
+        const response = await axios.post(`${SERVER_URL}/quest`, {
+          ...data,
+          userChoice,
+        });
+        const updatedData = response.data;
+        populateFormWithData(updatedData);
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -90,18 +99,19 @@ function QuestForge() {
               alt='hero race'
             />
           </>
-        ) : (
-          <p>Loading...</p>
-        )}
+        ) : null}
       </div>
       <div id='quest-right'>
         <div id='quest-scene'>
           {data && data.scene ? data.scene : null}
-          {data && data.deathScene ? <div id='scene'>
-            <h2>Game Over: Your Hero's Journey Ends Here</h2>
-            {data.deathScene}
-            </div> : null}
+          {data && data.deathScene ? (
+            <div id='scene'>
+              <h2>Game Over: Your Hero's Journey Ends Here</h2>
+              {data.deathScene}
+            </div>
+          ) : null}
         </div>
+        {loading ? <div className='loader'></div> : null}
         <div id='quest-options'>
           {data && !data.deathScene ? (
             <form id='optionsForm' onSubmit={handleUserChoice}>
