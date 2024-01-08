@@ -6,29 +6,32 @@ import Footer from './components/Footer';
 import Create from './components/Create';
 import QuestForge from './components/QuestForge';
 import UserProvider from './context/User';
+import LoadingProvider from './context/Loading';
 import './App.css';
 
 function App() {
   return (
     <Router>
       <UserProvider>
-        <div className='content'>
-          <Header />
-          <Routes>
-            <Route
-              exact
-              path='/'
-              element={
-                <>
-                  <Hero />
-                </>
-              }
-            ></Route>
-            <Route exact path='/create' element={<Create />}></Route>
-            <Route exact path='/quest' element={<QuestForge />}></Route>
-          </Routes>
-          <Footer />
-        </div>
+        <LoadingProvider>
+          <div className='content'>
+            <Header />
+            <Routes>
+              <Route
+                exact
+                path='/'
+                element={
+                  <>
+                    <Hero />
+                  </>
+                }
+              ></Route>
+              <Route exact path='/create' element={<Create />}></Route>
+              <Route exact path='/quest' element={<QuestForge />}></Route>
+            </Routes>
+            <Footer />
+          </div>
+        </LoadingProvider>
       </UserProvider>
     </Router>
   );

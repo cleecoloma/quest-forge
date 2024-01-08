@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { Button } from '@mui/material';
 import { UserContext } from '../context/User';
+import { LoadingContext } from '../context/Loading';
 import { useNavigate } from 'react-router-dom';
 import '../styles/QuestForge.css';
 
@@ -12,6 +13,7 @@ function QuestForge() {
   const [userChoice, setUserChoice] = useState(null);
   const navigate = useNavigate();
   const { hero, handleHero } = useContext(UserContext);
+  const { loading, handleLoading } = useContext(LoadingContext);
 
   useEffect(() => {
     fetchDataAndDisplay();
@@ -75,6 +77,7 @@ function QuestForge() {
 
   return (
     <div id='quest-container'>
+      {loading ? <div class='loader'></div> : null}
       <div id='quest-left'>
         {hero ? (
           <>
@@ -90,17 +93,17 @@ function QuestForge() {
               alt='hero race'
             />
           </>
-        ) : (
-          <p>Loading...</p>
-        )}
+        ) : null}
       </div>
       <div id='quest-right'>
         <div id='quest-scene'>
           {data && data.scene ? data.scene : null}
-          {data && data.deathScene ? <div id='scene'>
-            <h2>Game Over: Your Hero's Journey Ends Here</h2>
-            {data.deathScene}
-            </div> : null}
+          {data && data.deathScene ? (
+            <div id='scene'>
+              <h2>Game Over: Your Hero's Journey Ends Here</h2>
+              {data.deathScene}
+            </div>
+          ) : null}
         </div>
         <div id='quest-options'>
           {data && !data.deathScene ? (
