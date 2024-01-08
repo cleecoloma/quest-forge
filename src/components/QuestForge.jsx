@@ -13,7 +13,7 @@ function QuestForge() {
   const [userChoice, setUserChoice] = useState(null);
   const navigate = useNavigate();
   const { hero, handleHero } = useContext(UserContext);
-  const { loading, handleLoading } = useContext(LoadingContext);
+  const { loading, setLoading } = useContext(LoadingContext);
 
   useEffect(() => {
     fetchDataAndDisplay();
@@ -26,6 +26,7 @@ function QuestForge() {
   const fetchDataAndDisplay = async () => {
     try {
       // Make a POST request using Axios
+      setLoading(true);
       const response = await axios.post(`${SERVER_URL}/quest`);
       const responseData = response.data;
       console.log("HERE'S THE RESPONSE ", response);
@@ -34,6 +35,8 @@ function QuestForge() {
       populateFormWithData(responseData);
     } catch (error) {
       console.error('Error:', error);
+    } finally {
+      setLoading(true);
     }
   };
 

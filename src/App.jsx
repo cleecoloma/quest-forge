@@ -12,8 +12,8 @@ import './App.css';
 function App() {
   return (
     <Router>
-      <UserProvider>
-        <LoadingProvider>
+      <LoadingProvider>
+        <UserProvider>
           <div className='content'>
             <Header />
             <Routes>
@@ -31,8 +31,8 @@ function App() {
             </Routes>
             <Footer />
           </div>
-        </LoadingProvider>
-      </UserProvider>
+        </UserProvider>
+      </LoadingProvider>
     </Router>
   );
 }

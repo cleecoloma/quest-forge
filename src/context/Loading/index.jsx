@@ -16,6 +16,7 @@ function LoadingProvider(props) {
       value={{
         loading,
         handleLoading,
+        setLoading,
       }}
     >
       {props.children}

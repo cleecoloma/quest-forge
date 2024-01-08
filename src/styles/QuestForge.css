@@ -12,9 +12,13 @@
 
 /* HTML: <div class="loader"></div> */
 .loader {
+  position: absolute;
+  left: 52rem;
+  top: 26.5rem;
+  z-index: 100;
   width: 60px;
   aspect-ratio: 4;
-  --_g: no-repeat radial-gradient(circle closest-side,#000 90%,#0000);
+  --_g: no-repeat radial-gradient(circle closest-side,#511818 90%,#0000);
   background: 
     var(--_g) 0%   50%,
     var(--_g) 50%  50%,
@@ -69,7 +73,7 @@
 
 #quest-scene {
   position: absolute;
-  bottom: 26rem;
+  bottom: 26.5rem;
   right: 16rem;
   width: 35rem;
   color: #511818;
