@@ -1,16 +1,25 @@
 'use strict';
 
-import React from 'react';
+import React, { useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '@mui/material/Button';
+import { UserContext } from '../context/User';
+
 import '../styles/Hero.css';
 
 function Hero() {
+    const { setHero } = useContext(UserContext);
+
   const navigate = useNavigate();
 
   const handleCreateClick = () => {
     navigate('/create');
   };
+
+  useEffect(() => {
+    setHero(null);
+  }, []);
+
   return (
     <div id='hero-container'>
       <div id='hero-motto'>
