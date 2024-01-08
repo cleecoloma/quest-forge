@@ -77,7 +77,6 @@
 @media only screen and (min-width: 1001px) and (max-width: 1220px) {
   #create-container {
     max-width: 950px;
-    min-height: auto;
   }
 
   #create-left {
@@ -107,6 +106,7 @@
     max-width: 750px;
     background-color: white;
     box-shadow: 0 0 200px #0b1f1b inset;
+    margin-top: 110px;
     min-height: auto;
   }
 
@@ -143,6 +143,7 @@
     min-height: auto;
     display: flex;
     flex-direction: column;
+    margin-top: 80px;
   }
 
   #create-left {

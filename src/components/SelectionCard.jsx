@@ -4,8 +4,6 @@ import {
   Card,
   CardActionArea,
   CardMedia,
-  CardContent,
-  Typography,
 } from '@mui/material';
 import '../styles/SelectionCard.css';
 
