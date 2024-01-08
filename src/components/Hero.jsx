@@ -35,7 +35,7 @@ function Hero() {
           </Button>
         </div>
       </div>
-      <img id='hero-image' src='public/images/hero.png' alt='hero' />
+      <img id='hero-image' src='/images/hero.png' alt='hero' />
     </div>
   );
 }
