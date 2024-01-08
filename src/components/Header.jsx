@@ -48,7 +48,7 @@ function Header() {
         <Toolbar disableGutters>
           <img
             className='brand-logo brand-logo-for-xs'
-            src='/public/images/quest-forge-logo.png'
+            src='/images/quest-forge-logo.png'
             alt='quest forge logo'
           />
           <Typography
