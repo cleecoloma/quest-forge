@@ -80,7 +80,6 @@ function QuestForge() {
 
   return (
     <div id='quest-container'>
-      {loading ? <div class='loader'></div> : null}
       <div id='quest-left'>
         {hero ? (
           <>
@@ -108,6 +107,7 @@ function QuestForge() {
             </div>
           ) : null}
         </div>
+        {loading ? <div class='loader'></div> : null}
         <div id='quest-options'>
           {data && !data.deathScene ? (
             <form id='optionsForm' onSubmit={handleUserChoice}>
