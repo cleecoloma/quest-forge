@@ -114,7 +114,7 @@ function Header() {
           </Box>
           <img
             className='brand-logo brand-logo-for-md'
-            src='/public/images/quest-forge-logo.png'
+            src='/images/quest-forge-logo.png'
             alt='quest forge logo'
           />
           <Typography
