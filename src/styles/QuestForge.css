@@ -92,6 +92,12 @@
   right: 13rem;
 }
 
+#scene h2 {
+  margin-bottom: 1rem;
+  color: #d32f2f;
+  text-decoration: underline;
+}
+
 @media only screen and (min-width: 1221px) and (max-width: 1440px) {
   #quest-container {
     max-width: 1200px;
@@ -188,6 +194,10 @@
     height: 2rem;
     right: 1.5rem;
   }
+
+  #scene h2 {
+    margin-bottom: 2.5rem;
+  }
 }
 
 @media only screen and (max-width: 550px) {
@@ -232,6 +242,11 @@
     height: 2rem;
     right: 1.5rem;
   }
+
+  #scene h2 {
+    margin-bottom: 2rem;
+    line-height: 2rem;
+  }
 }
 
 @media only screen and (max-width: 400px) {
@@ -257,5 +272,9 @@
 
   #submit-choice-button {
     width: 100%;
+  }
+
+  #scene h2 {
+    margin-bottom: 1rem;
   }
 }

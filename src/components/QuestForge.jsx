@@ -96,7 +96,14 @@ function QuestForge() {
       </div>
       <div id='quest-right'>
         <div id='quest-scene'>
-          {data && data.scene ? <div id='scene'>{data.scene}</div> : null}
+          {data && data.scene ? (
+            <div id='scene'>{data.scene}</div>
+          ) : (
+            <div id='scene'>
+              <h2>Game Over: Your Hero's Journey Ends Here</h2>
+              {data.deathScene}
+            </div>
+          )}
         </div>
         <div id='quest-options'>
           {data && !data.deathScene ? (
