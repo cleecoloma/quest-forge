@@ -139,6 +139,10 @@ https://css-loaders.com/dots/
     max-width: 1200px;
   }
 
+  #hero-properties {
+    left: 12rem;
+  }
+
   #quest-scene {
     left: -2.5rem;
   }

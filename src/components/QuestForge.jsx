@@ -25,30 +25,34 @@ function QuestForge() {
 
   const fetchDataAndDisplay = async () => {
     try {
-      // Make a POST request using Axios
       setLoading(true);
       const response = await axios.post(`${SERVER_URL}/quest`);
       const responseData = response.data;
       console.log("HERE'S THE RESPONSE ", response);
-
-      // Populate the form with the initial response
       populateFormWithData(responseData);
     } catch (error) {
       console.error('Error:', error);
     } finally {
-      setLoading(true);
+      setLoading(false);
     }
   };
 
   const handleUserChoice = async (event) => {
     event.preventDefault();
-    if (userChoice !== null && data !== null) {
-      const response = await axios.post(`${SERVER_URL}/quest`, {
-        ...data,
-        userChoice,
-      });
-      const updatedData = response.data;
-      populateFormWithData(updatedData);
+    try {
+      setLoading(true);
+      if (userChoice !== null && data !== null) {
+        const response = await axios.post(`${SERVER_URL}/quest`, {
+          ...data,
+          userChoice,
+        });
+        const updatedData = response.data;
+        populateFormWithData(updatedData);
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -107,7 +111,7 @@ function QuestForge() {
             </div>
           ) : null}
         </div>
-        {loading ? <div class='loader'></div> : null}
+        {loading ? <div className='loader'></div> : null}
         <div id='quest-options'>
           {data && !data.deathScene ? (
             <form id='optionsForm' onSubmit={handleUserChoice}>
