@@ -92,6 +92,11 @@
   right: 13rem;
 }
 
+#scene {
+  position: absolute;
+  bottom: -15rem;
+}
+
 #scene h2 {
   margin-bottom: 1rem;
   color: #d32f2f;
@@ -101,6 +106,10 @@
 @media only screen and (min-width: 1221px) and (max-width: 1440px) {
   #quest-container {
     max-width: 1200px;
+  }
+
+  #quest-scene {
+    left: 0;
   }
 }
 
@@ -195,6 +204,10 @@
     right: 1.5rem;
   }
 
+  #scene {
+    top: 0rem;
+  }
+
   #scene h2 {
     margin-bottom: 2.5rem;
   }
@@ -243,8 +256,13 @@
     right: 1.5rem;
   }
 
+  #scene {
+    top: 0rem;
+  }
+
   #scene h2 {
-    margin-bottom: 2rem;
+    font-size: 130%;
+    margin-bottom: 1rem;
     line-height: 2rem;
   }
 }
