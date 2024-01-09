@@ -100,7 +100,7 @@ Here's the live link: [Quest Forge](https://quest-forge-app.netlify.app/)
 
 - **Frontend:** React.js for a dynamic and interactive user interface.
 - **Backend:** Node.js and Express.js for server-side logic.
-- **AWS Integration:** WS API Gateway, DynamoDB, and Lambda for backend management, data storage, and serverless computing
+- **AWS Integration:** AWS API Gateway, DynamoDB, and Lambda for backend management, data storage, and serverless computing
 - **OpenAI Integration:** Chat Completions API for quest scene and quest options generation.
 - **Additional Libraries and Frameworks:** Material UI, MUI icons.
 
