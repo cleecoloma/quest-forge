@@ -87,17 +87,17 @@ function QuestForge() {
       <div id='quest-left'>
         {hero ? (
           <>
+            <img
+              id='quest-hero-race'
+              src={'/images/' + hero.race + '-' + hero.sex + '.png'}
+              alt='hero race'
+            />
             <div id='hero-properties'>
               <h2>{hero.name}</h2>
               <h3>
                 a {hero.race} {hero.class}
               </h3>
             </div>
-            <img
-              id='quest-hero-race'
-              src={'/images/' + hero.race + '-' + hero.sex + '.png'}
-              alt='hero race'
-            />
           </>
         ) : null}
       </div>
@@ -129,16 +129,16 @@ function QuestForge() {
             </form>
           ) : null}
         </div>
-        <Button
-          id='reset-button'
-          type='submit'
-          variant='contained'
-          color='error'
-          onClick={handleReset}
-        >
-          Reset
-        </Button>
       </div>
+      <Button
+        id='reset-button'
+        type='submit'
+        variant='contained'
+        color='error'
+        onClick={handleReset}
+      >
+        Reset
+      </Button>
     </div>
   );
 }
