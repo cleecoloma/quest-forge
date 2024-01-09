@@ -1,4 +1,5 @@
 #quest-container {
+  position: relative;
   margin: 6rem auto 0;
   display: flex;
   text-align: center;
@@ -8,6 +9,7 @@
   background-image: url('/images/paper.png');
   background-position: center;
   background-repeat: no-repeat;
+  background-size: 90% 90%;
 }
 
 /* HTML: <div class="loader"></div> 
@@ -16,10 +18,6 @@ https://css-loaders.com/dots/
 */
 
 .loader {
-  position: absolute;
-  left: 13rem;
-  top: 21.5rem;
-  z-index: 100;
   width: 60px;
   aspect-ratio: 4;
   --_g: no-repeat radial-gradient(circle closest-side, #511818 90%, #0000);
@@ -40,27 +38,36 @@ https://css-loaders.com/dots/
 }
 
 #quest-left {
-  width: 40%;
-  position: relative;
+  width: 45%;
 }
+
 #quest-right {
-  width: 60%;
-  position: relative;
+  width: 55%;
+  padding-right: 8rem;
+}
+
+#quest-left,
+#quest-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 #quest-hero-race {
-  position: absolute;
-  left: 3rem;
-  bottom: 9rem;
+  height: 60%;
+  padding-left: 2rem;
   filter: drop-shadow(0 0 1rem rgb(255, 255, 255));
 }
 
 #hero-properties {
-  position: absolute;
-  left: 14rem;
-  bottom: 5rem;
+  display: flex;
+  padding-left: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: left;
-  line-height: 1.5rem;
+  line-height: 2rem;
   filter: drop-shadow(0 0 0.5rem rgb(255, 255, 255));
 }
 
@@ -79,9 +86,6 @@ https://css-loaders.com/dots/
 }
 
 #quest-scene {
-  position: absolute;
-  bottom: 26.5rem;
-  right: 16rem;
   width: 35rem;
   color: #511818;
   font-family: 'Edu QLD Beginner', cursive;
@@ -92,8 +96,6 @@ https://css-loaders.com/dots/
 }
 
 #quest-options {
-  position: absolute;
-  top: 22rem;
   width: 30rem;
   color: #2c1919;
   font-family: 'Edu QLD Beginner', cursive;
@@ -118,14 +120,9 @@ https://css-loaders.com/dots/
   position: absolute;
   background-color: #c02525;
   letter-spacing: 3px;
-  width: 8rem;
-  bottom: 4.5rem;
-  right: 13rem;
-}
-
-#scene {
-  position: absolute;
-  bottom: -10rem;
+  height: 2rem;
+  top: 6rem;
+  right: 7rem;
 }
 
 #scene h2 {
@@ -139,16 +136,20 @@ https://css-loaders.com/dots/
     max-width: 1200px;
   }
 
+  #quest-left {
+    margin-left: 2rem;
+  }
+
+  #quest-right {
+    /* padding-right: 0; */
+  }
+
   #hero-properties {
     left: 12rem;
   }
 
-  #quest-scene {
-    left: -2.5rem;
-  }
-
-  .loader {
-    left: 13rem;
+  #reset-button {
+    right: 6.5rem;
   }
 }
 
@@ -157,21 +158,34 @@ https://css-loaders.com/dots/
     max-width: 950px;
   }
 
+  #quest-left {
+    margin-left: 0;
+  }
+
+  #quest-right {
+    padding-right: 15rem;
+  }
+
+  #quest-hero-race {
+    width: 100%;
+    height: auto;
+    padding-left: 2rem;
+  }
+
   #quest-scene {
     right: 3rem;
   }
 
   #reset-button {
-    right: 3rem;
+    right: 6rem;
   }
 
-  #hero-properties {
-    left: 3rem;
+  #hero-properties h2 {
+    font-size: 170%;
   }
 
-  #quest-hero-race {
-    left: 0;
-    bottom: 9rem;
+  #hero-properties h3 {
+    font-size: 130%;
   }
 }
 
@@ -191,18 +205,13 @@ https://css-loaders.com/dots/
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-
-  .loader {
-    left: 21.5rem;
-  }
-
-  #quest-scene {
-    left: 6rem;
+    padding: 0;
+    margin: 0;
   }
 
   #reset-button {
-    right: 3rem;
+    right: 2.5rem;
+    top: 4.5rem;
   }
 }
 
@@ -218,9 +227,6 @@ https://css-loaders.com/dots/
 
   #quest-right {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
   }
 
   #quest-scene {
@@ -270,6 +276,10 @@ https://css-loaders.com/dots/
   #quest-container {
     max-width: 400px;
     min-height: 500px;
+  }
+
+  #quest-right {
+    padding-top: 2rem;
   }
 
   #quest-scene {
