@@ -17,7 +17,6 @@ const userSchema = new dynamoose.Schema({
 const User = dynamoose.model('quest-characters', userSchema);
 
 exports.handler = async (event) => {
-  console.log('HERES THE EVENT FROM LAMBDA 1A: ', event);
   const userId = parseInt(event.pathParameters.id);
 
   let body;
@@ -38,9 +37,6 @@ exports.handler = async (event) => {
     const user = await User.get(userId);
 
     if (user) {
-      console.log('user before stringify:', user);
-      console.log('body before stringify:', body);
-
       const params = {
         FunctionName: 'quest-openai',
         InvocationType: 'RequestResponse',
@@ -51,16 +47,11 @@ exports.handler = async (event) => {
 
       const payload = Buffer.from(response.Payload).toString();
 
-      console.log('Invocation response: ', response);
-
       if (response.FunctionError) {
         throw new Error(`Lambda invocation error: ${response.FunctionError}`);
       }
-      console.log('Response from openaiRequest: ', payload);
       const result = JSON.parse(payload);
       const resultBody = JSON.parse(result.body);
-      console.log('Parse payload to object: ', result);
-      console.log('Parse result body: ', resultBody);
       return resultBody;
     } else {
       return {

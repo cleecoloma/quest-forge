@@ -8,7 +8,6 @@ const OPEN_AI_URL = process.env.OPEN_AI_URL;
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 
 exports.handler = async (event) => {
-  console.log('We hit the event!', event);
   const requestBody = event.body;
   const user = event.user;
   const { scene, userChoice, roll } = requestBody;
@@ -51,11 +50,9 @@ exports.handler = async (event) => {
         model: 'gpt-3.5-turbo',
       };
     }
-    console.log('Here is our data:', data);
     try {
       const openAiResponse = await axios.post(OPEN_AI_URL, data, header);
       const openAi = openAiResponse.data.choices[0].message.content;
-      console.log('Here is our open ai response before being parsed:', openAi);
       const params = {
         FunctionName: 'quest-roll',
         InvocationType: 'RequestResponse',
@@ -66,7 +63,6 @@ exports.handler = async (event) => {
 
       const payload = Buffer.from(response.Payload).toString();
 
-      console.log('Response from characterRoll:', response, payload);
       const result = JSON.parse(payload);
 
       return {
@@ -86,11 +82,9 @@ exports.handler = async (event) => {
       ],
       model: 'gpt-3.5-turbo',
     };
-    console.log('Here is our data:', data);
     try {
       const openAiResponse = await axios.post(OPEN_AI_URL, data, header);
       const openAi = openAiResponse.data.choices[0].message.content;
-      console.log('Here is our open ai response before being parsed:', openAi);
       const params = {
         FunctionName: 'quest-roll',
         InvocationType: 'RequestResponse',
@@ -100,8 +94,6 @@ exports.handler = async (event) => {
       const response = await lambda.send(new InvokeCommand(params));
 
       const payload = Buffer.from(response.Payload).toString();
-
-      console.log('Response from characterRoll:', response);
 
       const result = JSON.parse(payload);
       return {
