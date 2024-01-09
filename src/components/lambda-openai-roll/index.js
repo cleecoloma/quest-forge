@@ -25,7 +25,7 @@ exports.handler = async (event) => {
       response.statusCode = 200;
       response.body = JSON.stringify(requestBody);
     } else {
-      const endGame = Math.random() < 0.2; // default 20% chance of true
+      const endGame = Math.random() < 0.15; // default 15% chance of true
       requestBody.roll = endGame;
       response.statusCode = 200;
       response.body = JSON.stringify(requestBody);
