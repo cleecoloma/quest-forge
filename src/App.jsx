@@ -7,7 +7,7 @@ import Create from './components/Create';
 import QuestForge from './components/QuestForge';
 import UserProvider from './context/User';
 import LoadingProvider from './context/Loading';
-import './App.css';
+import './styles/App.css';
 
 function App() {
   return (
