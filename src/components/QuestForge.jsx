@@ -26,7 +26,9 @@ function QuestForge() {
   const fetchDataAndDisplay = async () => {
     try {
       setLoading(true);
-      const response = await axios.post(`${SERVER_URL}/quest`);
+      const response = await axios.post(`${SERVER_URL}/quest`, {
+        name: hero.name,
+      });
       const responseData = response.data;
       console.log("HERE'S THE RESPONSE ", response);
       populateFormWithData(responseData);

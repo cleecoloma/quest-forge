@@ -17,7 +17,7 @@ const userSchema = new dynamoose.Schema({
 const User = dynamoose.model('quest-characters', userSchema);
 
 exports.handler = async (event) => {
-  const userName = event.queryStringParameters.userName;
+  const userName = event.queryStringParameters.name;
 
   let body;
 

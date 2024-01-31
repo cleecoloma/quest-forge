@@ -18,7 +18,7 @@ function UserProvider(props) {
     console.log('Heres the hero obj', heroObj);
     setTimeout(() => {
       navigate('/quest');
-    }, 4000);
+    }, 3000);
     try {
       const response = await axios.put(`${SERVER_URL}/create`, heroObj);
       const responseData = response.data;
