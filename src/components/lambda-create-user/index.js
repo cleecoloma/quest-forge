@@ -1,8 +1,9 @@
 const dynamoose = require('dynamoose');
+const { v4: uuidv4 } = require('uuid');
 
 const userSchema = new dynamoose.Schema({
   id: {
-    type: Number,
+    type: String,
     hashKey: true,
   },
   name: String,
@@ -16,35 +17,31 @@ const User = dynamoose.model('quest-characters', userSchema);
 
 exports.handler = async (event) => {
   const requestBody = JSON.parse(event.body);
-  const id = requestBody.id;
 
   try {
-    const userToUpdate = await User.get(id);
-    if (!userToUpdate) {
-      return {
-        statusCode: 404,
-        body: JSON.stringify({ message: 'User not found' }),
-      };
-    }
+    const id = uuidv4();
 
-    userToUpdate.name = requestBody.name || userToUpdate.name;
-    userToUpdate.sex = requestBody.sex || userToUpdate.sex;
-    userToUpdate.age = requestBody.age || userToUpdate.age;
-    userToUpdate.race = requestBody.race || userToUpdate.race;
-    userToUpdate.class = requestBody.class || userToUpdate.class;
+    const newUser = new User({
+      id: id,
+      name: requestBody.name || '',
+      sex: requestBody.sex || '',
+      age: requestBody.age || 0,
+      race: requestBody.race || '',
+      class: requestBody.class || '',
+    });
 
-    await userToUpdate.save();
+    await newUser.save();
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ message: 'User has been updated' }),
+      body: JSON.stringify({ message: 'User has been created', id: id }),
     };
   } catch (error) {
-    console.error('Error:', error);
+    console.error('Error creating user:', error);
 
     return {
       statusCode: 500,
-      body: JSON.stringify({ message: 'Error updating user' }),
+      body: JSON.stringify({ message: 'Error creating user' }),
     };
   }
 };
