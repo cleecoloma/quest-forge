@@ -16,7 +16,6 @@ function UserProvider(props) {
   const handleHero = async (heroObj) => {
     setHero(heroObj);
     console.log('Heres the hero obj', heroObj);
-    heroObj.id = 1;
     setTimeout(() => {
       navigate('/quest');
     }, 4000);
