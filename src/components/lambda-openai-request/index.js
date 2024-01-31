@@ -17,7 +17,7 @@ const userSchema = new dynamoose.Schema({
 const User = dynamoose.model('quest-characters', userSchema);
 
 exports.handler = async (event) => {
-  const userId = parseInt(event.pathParameters.id);
+  const userName = event.queryStringParameters.userName;
 
   let body;
 
@@ -34,7 +34,7 @@ exports.handler = async (event) => {
   }
 
   try {
-    const user = await User.get(userId);
+    const user = await User.query('name').eq(userName).exec();
 
     if (user) {
       const params = {
