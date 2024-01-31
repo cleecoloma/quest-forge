@@ -6,7 +6,7 @@ const { LambdaClient, InvokeCommand } = require('@aws-sdk/client-lambda');
 const lambda = new LambdaClient({ region: 'us-west-2' });
 
 const userSchema = new dynamoose.Schema({
-  id: Number,
+  id: String,
   name: String,
   age: Number,
   sex: String,
