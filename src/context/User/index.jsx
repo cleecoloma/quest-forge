@@ -13,6 +13,10 @@ function UserProvider(props) {
 
   const navigate = useNavigate();
 
+  const resetHero = async (heroObj) => {
+    setHero(heroObj);
+  };
+
   const handleHero = async (heroObj) => {
     setHero(heroObj);
     console.log('Heres the hero obj', heroObj);
@@ -34,6 +38,7 @@ function UserProvider(props) {
         hero,
         setHero,
         handleHero,
+        resetHero,
       }}
     >
       {props.children}

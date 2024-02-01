@@ -12,7 +12,7 @@ function QuestForge() {
   const [data, setData] = useState(null);
   const [userChoice, setUserChoice] = useState(null);
   const navigate = useNavigate();
-  const { hero, handleHero } = useContext(UserContext);
+  const { hero, handleHero, resetHero } = useContext(UserContext);
   const { loading, setLoading } = useContext(LoadingContext);
 
   useEffect(() => {
@@ -57,7 +57,7 @@ function QuestForge() {
   };
 
   const handleReset = () => {
-    handleHero(null);
+    resetHero(null);
     console.log('Hero has been reset');
     navigate('/create');
   };
