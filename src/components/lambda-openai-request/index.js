@@ -6,7 +6,7 @@ const { LambdaClient, InvokeCommand } = require('@aws-sdk/client-lambda');
 const lambda = new LambdaClient({ region: 'us-west-2' });
 
 const userSchema = new dynamoose.Schema({
-  id: String,
+  id: Number,
   name: String,
   age: Number,
   sex: String,
@@ -17,6 +17,7 @@ const userSchema = new dynamoose.Schema({
 const User = dynamoose.model('quest-characters', userSchema);
 
 exports.handler = async (event) => {
+  console.log('START EVENT', event);
   const userName = event.queryStringParameters.name;
 
   let body;

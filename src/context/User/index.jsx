@@ -16,13 +16,12 @@ function UserProvider(props) {
   const handleHero = async (heroObj) => {
     setHero(heroObj);
     console.log('Heres the hero obj', heroObj);
-    setTimeout(() => {
-      navigate('/quest');
-    }, 3000);
+
     try {
-      const response = await axios.put(`${SERVER_URL}/create`, heroObj);
+      const response = await axios.post(`${SERVER_URL}/create`, heroObj);
       const responseData = response.data;
       console.log("HERE'S THE RESPONSE ", responseData);
+      navigate('/quest');
     } catch (error) {
       console.error('Error:', error);
     }

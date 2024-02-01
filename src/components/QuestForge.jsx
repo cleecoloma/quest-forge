@@ -24,11 +24,12 @@ function QuestForge() {
   };
 
   const fetchDataAndDisplay = async () => {
+    console.log("Hero name", hero.name)
     try {
       setLoading(true);
-      const response = await axios.post(`${SERVER_URL}/quest`, {
-        name: hero.name,
-      });
+      const response = await axios.post(
+        `${SERVER_URL}/quest?name=${hero.name}`
+      );
       const responseData = response.data;
       console.log("HERE'S THE RESPONSE ", response);
       populateFormWithData(responseData);
@@ -44,10 +45,13 @@ function QuestForge() {
     try {
       setLoading(true);
       if (userChoice !== null && data !== null) {
-        const response = await axios.post(`${SERVER_URL}/quest`, {
-          ...data,
-          userChoice,
-        });
+        const response = await axios.post(
+          `${SERVER_URL}/quest?name=${hero.name}`,
+          {
+            ...data,
+            userChoice,
+          }
+        );
         const updatedData = response.data;
         populateFormWithData(updatedData);
       }
