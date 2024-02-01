@@ -19,10 +19,11 @@ const User = dynamoose.model('quest-characters', userSchema);
 exports.handler = async (event) => {
   console.log('START EVENT', event);
   const userName = event.queryStringParameters.name;
-
+  console.log('START EVENT QUERY NAME', event);
   let body;
 
-  const eventBody = JSON.parse(event.body);
+  // const eventBody = JSON.parse(event.body);
+  const eventBody = event.body;
   if (eventBody) {
     body = eventBody;
   } else {
@@ -35,8 +36,9 @@ exports.handler = async (event) => {
   }
 
   try {
-    const user = await User.query('name').eq(userName).exec();
-
+    console.log('HERE BEFORE SEARCHING HERO', userName);
+    const user = await User.scan('name').eq(userName).exec();
+    console.log('HERE AFTER SEARCHING HERO', user);
     if (user) {
       const params = {
         FunctionName: 'quest-openai',

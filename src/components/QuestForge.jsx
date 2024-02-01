@@ -24,7 +24,7 @@ function QuestForge() {
   };
 
   const fetchDataAndDisplay = async () => {
-    console.log("Hero name", hero.name)
+    console.log("Hero name at Quest Forge", hero.name)
     try {
       setLoading(true);
       const response = await axios.post(
