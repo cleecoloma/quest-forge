@@ -16,14 +16,13 @@ function UserProvider(props) {
   const handleHero = async (heroObj) => {
     setHero(heroObj);
     console.log('Heres the hero obj', heroObj);
-    heroObj.id = 1;
-    setTimeout(() => {
-      navigate('/quest');
-    }, 4000);
     try {
       const response = await axios.put(`${SERVER_URL}/create`, heroObj);
       const responseData = response.data;
       console.log("HERE'S THE RESPONSE ", responseData);
+      setTimeout(() => {
+        navigate('/quest');
+      }, 1000);
     } catch (error) {
       console.error('Error:', error);
     }
